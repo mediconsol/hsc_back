@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  document: one
+  workflow_name: MyString
+  approvers_data: MyText
+  workflow_type: MyString
+  is_sequential: false
+
+two:
+  document: two
+  workflow_name: MyString
+  approvers_data: MyText
+  workflow_type: MyString
+  is_sequential: false

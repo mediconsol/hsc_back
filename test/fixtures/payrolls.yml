@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  pay_period_start: 2025-08-05
+  pay_period_end: 2025-08-05
+  base_pay: 9.99
+  overtime_pay: 9.99
+  night_pay: 9.99
+  allowances: 9.99
+  deductions: 9.99
+  tax: 9.99
+  net_pay: 9.99
+  status: MyString
+
+two:
+  employee: two
+  pay_period_start: 2025-08-05
+  pay_period_end: 2025-08-05
+  base_pay: 9.99
+  overtime_pay: 9.99
+  night_pay: 9.99
+  allowances: 9.99
+  deductions: 9.99
+  tax: 9.99
+  net_pay: 9.99
+  status: MyString

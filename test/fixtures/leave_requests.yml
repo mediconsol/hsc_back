@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  leave_type: MyString
+  start_date: 2025-08-05
+  end_date: 2025-08-05
+  days_requested: 1
+  reason: MyText
+  status: MyString
+  approver: one
+  approved_at: 2025-08-05 20:59:47
+
+two:
+  employee: two
+  leave_type: MyString
+  start_date: 2025-08-05
+  end_date: 2025-08-05
+  days_requested: 1
+  reason: MyText
+  status: MyString
+  approver: two
+  approved_at: 2025-08-05 20:59:47
