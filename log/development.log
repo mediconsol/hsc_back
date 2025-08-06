@@ -2739,3 +2739,226 @@ Processing by Api::V1::EmployeesController#index as */*
 Completed 200 OK in 32ms (Views: 1.1ms | ActiveRecord: 3.6ms (17 queries, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 11:47:23 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:4:in 'Api::V1::AuthController#login'
+Completed 200 OK in 283ms (Views: 0.2ms | ActiveRecord: 8.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 11:47:26 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 11:47:28 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:21:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mAttendance Load (2.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.1ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.8ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.3ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.5ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (2.5ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:43:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 83ms (Views: 1.1ms | ActiveRecord: 11.1ms (18 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 11:47:31 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:21:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:43:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 21ms (Views: 1.2ms | ActiveRecord: 2.7ms (18 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 11:47:39 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:21:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.3ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:43:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 72ms (Views: 1.0ms | ActiveRecord: 4.4ms (18 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 11:47:42 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:21:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.1ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:43:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 21ms (Views: 1.1ms | ActiveRecord: 2.7ms (18 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 11:47:58 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:21:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.1ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:20:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:92:in 'Employee#annual_leave_balance'
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:43:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 22ms (Views: 2.0ms | ActiveRecord: 3.0ms (18 queries, 0 cached) | GC: 0.0ms)
+
+

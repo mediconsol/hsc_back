@@ -7,10 +7,13 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "localhost:7002", "127.0.0.1:7002"
+    # 환경변수에서 허용된 origins 가져오기
+    frontend_urls = ENV.fetch("FRONTEND_URL", "http://localhost:7002").split(",").map(&:strip)
+    origins frontend_urls
 
     resource "*",
       headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      credentials: true
   end
 end

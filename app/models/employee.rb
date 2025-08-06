@@ -3,14 +3,40 @@ class Employee < ApplicationRecord
   has_many :payrolls, dependent: :destroy
   has_many :leave_requests, dependent: :destroy
   
-  validates :name, presence: true
-  validates :department, presence: true
-  validates :position, presence: true
+  validates :name, presence: true, 
+            length: { minimum: 2, maximum: 50 },
+            format: { with: /\A[가-힣a-zA-Z\s]+\z/, message: "한글, 영문, 공백만 입력 가능합니다" }
+  
+  validates :department, presence: true, 
+            inclusion: { in: %w[의료진 간호부 행정부 시설관리], message: "올바른 부서를 선택하세요" }
+  
+  validates :position, presence: true, 
+            length: { minimum: 2, maximum: 30 }
+  
   validates :employment_type, presence: true
+  
   validates :hire_date, presence: true
-  validates :email, presence: true, uniqueness: true
+  validate :hire_date_not_future
+  
+  validates :email, presence: true, 
+            uniqueness: { case_sensitive: false },
+            format: { with: URI::MailTo::EMAIL_REGEXP, message: "올바른 이메일 형식이 아닙니다" }
+  
+  validates :phone, format: { with: /\A[0-9\-\s()]+\z/, message: "올바른 전화번호 형식이 아닙니다" }, 
+            allow_blank: true
+  
   validates :salary_type, presence: true
+  
+  validates :base_salary, numericality: { greater_than: 0, less_than: 100_000_000 }, 
+            allow_nil: true
+  
+  validates :hourly_rate, numericality: { greater_than: 0, less_than: 100_000 }, 
+            allow_nil: true
+  
   validates :status, presence: true
+  
+  # 급여 타입에 따른 필수 필드 검증
+  validate :salary_fields_consistency
   
   enum :employment_type, {
     full_time: 'full_time',       # 정규직
@@ -31,9 +57,17 @@ class Employee < ApplicationRecord
     resigned: 'resigned'         # 퇴사
   }
   
+  # 성능 최적화된 스코프들
   scope :active, -> { where(status: 'active') }
   scope :by_department, ->(dept) { where(department: dept) }
   scope :by_employment_type, ->(type) { where(employment_type: type) }
+  scope :recent, -> { order(created_at: :desc) }
+  scope :with_associations, -> { includes(:attendances, :leave_requests, :payrolls) }
+  
+  # 통계용 스코프들 (쿼리 최적화)
+  scope :active_count, -> { where(status: 'active').count }
+  scope :by_department_count, ->(dept) { where(department: dept).count }
+  scope :on_leave_count, -> { where(status: 'on_leave').count }
   
   def employment_type_text
     case employment_type
@@ -80,17 +114,70 @@ class Employee < ApplicationRecord
   end
   
   def annual_leave_balance
-    years = years_of_service
-    base_days = 15 # 기본 연차
-    additional_days = [years - 1, 10].min # 최대 10일 추가
-    total_days = base_days + additional_days
+    Rails.cache.fetch("employee_#{id}_annual_leave_balance_#{Date.current.year}", expires_in: 1.day) do
+      years = years_of_service
+      base_days = 15 # 기본 연차
+      additional_days = [years - 1, 10].min # 최대 10일 추가
+      total_days = base_days + additional_days
+      
+      used_days = leave_requests.where(
+        leave_type: 'annual',
+        status: 'approved',
+        start_date: Date.current.beginning_of_year..Date.current.end_of_year
+      ).sum(:days_requested)
+      
+      total_days - used_days
+    end
+  end
+  
+  # 통계 데이터 캐싱
+  def self.dashboard_stats
+    Rails.cache.fetch("employee_dashboard_stats", expires_in: 5.minutes) do
+      {
+        total: count,
+        active: active_count,
+        on_leave: on_leave_count,
+        by_department: %w[의료진 간호부 행정부 시설관리].map { |dept|
+          [dept, by_department_count(dept)]
+        }.to_h
+      }
+    end
+  end
+  
+  # 캐시 무효화
+  def clear_cache
+    Rails.cache.delete("employee_#{id}_annual_leave_balance_#{Date.current.year}")
+    Rails.cache.delete("employee_dashboard_stats")
+  end
+  
+  # 콜백으로 캐시 무효화
+  after_save :clear_cache
+  after_destroy :clear_cache
+  
+  private
+  
+  def hire_date_not_future
+    return unless hire_date.present?
     
-    used_days = leave_requests.where(
-      leave_type: 'annual',
-      status: 'approved',
-      start_date: Date.current.beginning_of_year..Date.current.end_of_year
-    ).sum(:days_requested)
-    
-    total_days - used_days
+    if hire_date > Date.current
+      errors.add(:hire_date, "미래 날짜는 입력할 수 없습니다")
+    end
+  end
+  
+  def salary_fields_consistency
+    case salary_type
+    when 'monthly'
+      if base_salary.blank?
+        errors.add(:base_salary, "월급 유형에는 기본급이 필수입니다")
+      end
+    when 'hourly'
+      if hourly_rate.blank?
+        errors.add(:hourly_rate, "시급 유형에는 시급이 필수입니다")
+      end
+    when 'daily'
+      if base_salary.blank?
+        errors.add(:base_salary, "일급 유형에는 기본급이 필수입니다")
+      end
+    end
   end
 end

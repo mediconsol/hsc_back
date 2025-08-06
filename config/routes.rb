@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :announcements, except: [:new, :edit]
       root 'home#index'
       post 'auth/login', to: 'auth#login'
+      post 'auth/refresh', to: 'auth#refresh'
       delete 'auth/logout', to: 'auth#logout'
       get 'auth/me', to: 'auth#me'
     end
