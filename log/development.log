@@ -2962,3 +2962,1196 @@ Processing by Api::V1::EmployeesController#index as */*
 Completed 200 OK in 22ms (Views: 2.0ms | ActiveRecord: 3.0ms (18 queries, 0 cached) | GC: 0.0ms)
 
 
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Count (117.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Count (97.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='Backend'*/[0m
+  [1m[36mEmployee Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, [36mRAILS_ENV[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Backend'*/[0m
+  [1m[35m (108.0ms)[0m  [1m[35mCREATE DATABASE "hospital_system_development" ENCODING = 'unicode' /*application='Backend'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Backend'*/[0m
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE DATABASE "hospital_system_test" ENCODING = 'unicode' /*application='Backend'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Backend'*/[0m
+Migrating to AddDatabaseIndexes (20250806000001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Backend'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department" ON "employees" ("department") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_employment_type" ON "employees" ("employment_type") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_status" ON "employees" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_hire_date" ON "employees" ("hire_date") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_and_status" ON "employees" ("department", "status") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role") /*application='Backend'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_work_date" ON "attendances" ("work_date") /*application='Backend'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_attendances_on_employee_id_and_work_date" ON "attendances" ("employee_id", "work_date") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_status" ON "leave_requests" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_start_date" ON "leave_requests" ("start_date") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_employee_id_and_status" ON "leave_requests" ("employee_id", "status") /*application='Backend'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_payrolls_on_pay_period" ON "payrolls" ("pay_period") /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='Backend'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(543249495243503685) /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2025-08-06 13:57:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250806000001_add_database_indexes.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.0) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in 'Rack::Cors#call'
+railties (8.0.2) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.1) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.1) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.1) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-08-06 13:57:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250806000001_add_database_indexes.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.0) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in 'Rack::Cors#call'
+railties (8.0.2) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.1) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.1) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.1) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, [36mRAILS_ENV[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Backend'*/[0m
+Migrating to AddDatabaseIndexes (20250806000001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Backend'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department" ON "employees" ("department") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_employment_type" ON "employees" ("employment_type") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_status" ON "employees" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_employees_on_hire_date" ON "employees" ("hire_date") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_and_status" ON "employees" ("department", "status") /*application='Backend'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role") /*application='Backend'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_work_date" ON "attendances" ("work_date") /*application='Backend'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_attendances_on_employee_id_and_work_date" ON "attendances" ("employee_id", "work_date") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_status" ON "leave_requests" ("status") /*application='Backend'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_start_date" ON "leave_requests" ("start_date") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_employee_id_and_status" ON "leave_requests" ("employee_id", "status") /*application='Backend'*/[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE INDEX "index_payrolls_on_pay_period" ON "payrolls" ("pay_period") /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='Backend'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(543249495243503685) /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, [36mRAILS_ENV[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Backend'*/[0m
+Migrating to AddDatabaseIndexes (20250806000001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Backend'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email") /*application='Backend'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department" ON "employees" ("department") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_employment_type" ON "employees" ("employment_type") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_status" ON "employees" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_employees_on_hire_date" ON "employees" ("hire_date") /*application='Backend'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_and_status" ON "employees" ("department", "status") /*application='Backend'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role") /*application='Backend'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_work_date" ON "attendances" ("work_date") /*application='Backend'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_attendances_on_employee_id_and_work_date" ON "attendances" ("employee_id", "work_date") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_status" ON "leave_requests" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_start_date" ON "leave_requests" ("start_date") /*application='Backend'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_leave_requests_on_employee_id_and_status" ON "leave_requests" ("employee_id", "status") /*application='Backend'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_payrolls_on_pay_period_start" ON "payrolls" ("pay_period_start") /*application='Backend'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_payrolls_on_status" ON "payrolls" ("status") /*application='Backend'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_payrolls_on_employee_id_and_pay_period_start" ON "payrolls" ("employee_id", "pay_period_start") /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250806000001') RETURNING "version" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='Backend'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/up" for ::1 at 2025-08-06 14:01:48 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Rails::HealthController#show as */*
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:01:56 +0900
+Processing by Api::V1::HomeController#index as JSON
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, [36mRAILS_ENV[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Backend'*/[0m
+  [1m[35m (102.9ms)[0m  [1m[35mCREATE DATABASE "hospital_system_development" ENCODING = 'unicode' /*application='Backend'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Backend'*/[0m
+  [1m[35m (88.1ms)[0m  [1m[35mCREATE DATABASE "hospital_system_test" ENCODING = 'unicode' /*application='Backend'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Backend'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(543249495243503685) /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'manager@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'staff@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'kim.doctor@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'lee.specialist@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'park.intern@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'choi.head.nurse@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'jung.nurse@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'han.assistant@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'kang.admin@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'yoon.admin@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'song.parttime@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'lim.facility@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'cho.security@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = 'kim.onleave@hospital.com' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."status" = 'active' AND "employees"."name" = '정간호사' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."status" = 'active' AND "employees"."name" = '박인턴' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."status" = 'active' AND "employees"."name" = '송파트타임' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."status" = 'active' AND "employees"."name" = '한간호조무사' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mLeaveRequest Load (1.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."start_date" = '2025-08-11' AND "leave_requests"."end_date" = '2025-08-12' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mLeaveRequest Load (0.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."start_date" = '2025-08-04' AND "leave_requests"."end_date" = '2025-08-04' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."start_date" = '2025-08-16' AND "leave_requests"."end_date" = '2025-08-17' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mLeaveRequest Load (0.1ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."start_date" = '2025-07-07' AND "leave_requests"."end_date" = '2025-07-09' LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*application='Backend'*/[0m
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."status" = 'active' /*application='Backend'*/[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."status" = 'on_leave' /*application='Backend'*/[0m
+  [1m[36mLeaveRequest Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leave_requests" WHERE "leave_requests"."status" = 'pending' /*application='Backend'*/[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2025-08-06 14:03:36 +0900
+Processing by Api::V1::HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-08-06 14:03:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:03:40 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 200 OK in 251ms (Views: 0.1ms | ActiveRecord: 9.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:03:42 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:06:03 +0900
+Processing by Api::V1::EmployeesController#index as JSON
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:06:15 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 401 Unauthorized in 144ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Count (102.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='Backend'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:06:47 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 401 Unauthorized in 144ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:06:53 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 401 Unauthorized in 144ms (Views: 0.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:07:11 +0900
+Processing by Api::V1::EmployeesController#index as JSON
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees"."id", "employees"."name", "employees"."department", "employees"."position", "employees"."employment_type", "employees"."hire_date", "employees"."phone", "employees"."email", "employees"."status", "employees"."base_salary", "employees"."hourly_rate", "employees"."salary_type", "employees"."created_at", "employees"."updated_at" FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:26:in 'Enumerable#map'
+  [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:26:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.6ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:26:in 'Enumerable#map'
+  [1m[36mPayroll Load (1.9ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:26:in 'Enumerable#map'
+  [1m[36mLeaveRequest Sum (0.4ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 7 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 1 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 12 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 3 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 9 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 8 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 2 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.3ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 10 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 5 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 11 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.1ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 4 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mLeaveRequest Sum (0.2ms)[0m  [1m[34mSELECT SUM("leave_requests"."days_requested") FROM "leave_requests" WHERE "leave_requests"."employee_id" = 6 AND "leave_requests"."leave_type" = 'annual' AND "leave_requests"."status" = 'approved' AND "leave_requests"."start_date" BETWEEN '2025-01-01' AND '2025-12-31' /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/employee.rb:127:in 'block in Employee#annual_leave_balance'
+  [1m[36mEmployee Count (1.6ms)[0m  [1m[34mSELECT COUNT("employees"."id", "employees"."name", "employees"."department", "employees"."position", "employees"."employment_type", "employees"."hire_date", "employees"."phone", "employees"."email", "employees"."status", "employees"."base_salary", "employees"."hourly_rate", "employees"."salary_type", "employees"."created_at", "employees"."updated_at") FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:49:in 'Api::V1::EmployeesController#index'
+Internal Server Error: PG::UndefinedFunction: 오류:  count(bigint, character varying, character varying, character varying, character varying, date, character varying, character varying, character varying, numeric, numeric, character varying, timestamp without time zone, timestamp without time zone) 이름의 함수가 없음
+LINE 1: SELECT COUNT("employees"."id", "employees"."name", "employee...
+               ^
+HINT:  지정된 이름 및 인자 자료형과 일치하는 함수가 없습니다. 명시적 형변환자를 추가해야 할 수도 있습니다.
+
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in 'PG::Connection#exec'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in 'ActiveRecord::ConnectionAdapters::PostgreSQL::DatabaseStatements#perform_query'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:556:in 'block (2 levels) in ActiveRecord::ConnectionAdapters::DatabaseStatements#raw_execute'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract_adapter.rb:1015:in 'block in ActiveRecord::ConnectionAdapters::AbstractAdapter#with_raw_connection'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/concurrency/null_lock.rb:9:in 'ActiveSupport::Concurrency::NullLock#synchronize'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract_adapter.rb:984:in 'ActiveRecord::ConnectionAdapters::AbstractAdapter#with_raw_connection'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:555:in 'block in ActiveRecord::ConnectionAdapters::DatabaseStatements#raw_execute'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract_adapter.rb:1135:in 'ActiveRecord::ConnectionAdapters::AbstractAdapter#log'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:554:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#raw_execute'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:591:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#internal_execute'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:547:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#internal_exec_query'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:693:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#select'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/database_statements.rb:73:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#select_all'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:248:in 'block in ActiveRecord::ConnectionAdapters::QueryCache#select_all'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:286:in 'block (2 levels) in ActiveRecord::ConnectionAdapters::QueryCache#cache_sql'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:80:in 'ActiveRecord::ConnectionAdapters::QueryCache::Store#compute_if_absent'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:284:in 'block in ActiveRecord::ConnectionAdapters::QueryCache#cache_sql'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/concurrency/null_lock.rb:9:in 'ActiveSupport::Concurrency::NullLock#synchronize'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:283:in 'ActiveRecord::ConnectionAdapters::QueryCache#cache_sql'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:248:in 'ActiveRecord::ConnectionAdapters::QueryCache#select_all'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:498:in 'block (2 levels) in ActiveRecord::Calculations#execute_simple_calculation'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in 'ActiveRecord::ConnectionAdapters::ConnectionPool#with_connection'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/connection_handling.rb:310:in 'ActiveRecord::ConnectionHandling#with_connection'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:497:in 'block in ActiveRecord::Calculations#execute_simple_calculation'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation.rb:1470:in 'ActiveRecord::Relation#skip_query_cache_if_necessary'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:496:in 'ActiveRecord::Calculations#execute_simple_calculation'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:457:in 'ActiveRecord::Calculations#perform_calculation'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:245:in 'ActiveRecord::Calculations#calculate'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/relation/calculations.rb:102:in 'ActiveRecord::Calculations#count'
+C:/Users/User/Documents/app/hsc1/backend/app/controllers/api/v1/employees_controller.rb:49:in 'Api::V1::EmployeesController#index'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/basic_implicit_render.rb:8:in 'ActionController::BasicImplicitRender#send_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/abstract_controller/base.rb:226:in 'AbstractController::Base#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/rendering.rb:193:in 'ActionController::Rendering#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/abstract_controller/callbacks.rb:261:in 'block in AbstractController::Callbacks#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:109:in 'ActiveSupport::Callbacks#run_callbacks'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/abstract_controller/callbacks.rb:260:in 'AbstractController::Callbacks#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/rescue.rb:27:in 'ActionController::Rescue#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/instrumentation.rb:76:in 'block in ActionController::Instrumentation#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/instrumentation.rb:75:in 'ActionController::Instrumentation#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal/params_wrapper.rb:259:in 'ActionController::ParamsWrapper#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/railties/controller_runtime.rb:39:in 'ActiveRecord::Railties::ControllerRuntime#process_action'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/abstract_controller/base.rb:163:in 'AbstractController::Base#process'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/routing/route_set.rb:67:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/journey/router.rb:53:in 'block in ActionDispatch::Journey::Router#serve'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/journey/router.rb:133:in 'block in ActionDispatch::Journey::Router#find_routes'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/journey/router.rb:126:in 'Array#each'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/journey/router.rb:126:in 'ActionDispatch::Journey::Router#find_routes'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/journey/router.rb:34:in 'ActionDispatch::Journey::Router#serve'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/routing/route_set.rb:908:in 'ActionDispatch::Routing::RouteSet#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/engine/lazy_route_set.rb:68:in 'Rails::Engine::LazyRouteSet#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-3.2.0/lib/rack/etag.rb:29:in 'Rack::ETag#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-3.2.0/lib/rack/conditional_get.rb:31:in 'Rack::ConditionalGet#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-3.2.0/lib/rack/head.rb:15:in 'Rack::Head#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activerecord-8.0.2/lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-3.2.0/lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-3.2.0/lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/actionpack-8.0.2/lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/rack-cors-3.0.0/lib/rack/cors.rb:102:in 'Rack::Cors#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/engine.rb:535:in 'Rails::Engine#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/server.rb:472:in 'Puma::Server#process_client'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/server.rb:254:in 'block in Puma::Server#run'
+C:/tools/ruby34/lib/ruby/gems/3.4.0/gems/puma-6.6.1/lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Completed 500 Internal Server Error in 176ms (Views: 0.1ms | ActiveRecord: 16.7ms (17 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:07:22 +0900
+Processing by Api::V1::EmployeesController#index as JSON
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.3ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 6.7ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:08:27 +0900
+Processing by Api::V1::HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-08-06 14:08:28 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:08:31 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 200 OK in 148ms (Views: 0.1ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:08:33 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:08:35 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:08:47 +0900
+Processing by Api::V1::HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-08-06 14:08:47 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:08:50 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:09:03 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 14:09:06 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 14:09:07 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements" for ::1 at 2025-08-06 14:09:09 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:09:09 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 14:09:11 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:09:12 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:09:19 +0900
+Processing by Api::V1::HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-08-06 14:09:19 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:40:32 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:40:36 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 14:45:13 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 200 OK in 234ms (Views: 0.1ms | ActiveRecord: 4.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 14:45:15 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:45:28 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:46:59 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 14:47:03 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 14:49:26 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 14:49:28 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 14:49:29 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:26:42 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:26:45 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:26:49 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:26:53 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 16:26:58 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts?category=work_share" for ::1 at 2025-08-06 16:27:00 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"category" => "work_share", "department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts?category=qna" for ::1 at 2025-08-06 16:27:01 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"category" => "qna", "department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts?department=%EC%9D%98%EB%A3%8C%EC%A7%84&category=qna" for ::1 at 2025-08-06 16:27:01 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department" => "의료진", "category" => "qna", "department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements" for ::1 at 2025-08-06 16:27:09 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements?department=%EC%9D%98%EB%A3%8C%EC%A7%84" for ::1 at 2025-08-06 16:27:31 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"department" => "의료진", "announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements?department=%EA%B0%84%ED%98%B8%EB%B6%80" for ::1 at 2025-08-06 16:27:32 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"department" => "간호부", "announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements?department=%ED%96%89%EC%A0%95%EB%B6%80" for ::1 at 2025-08-06 16:27:33 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"department" => "행정부", "announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements?department=%EC%8B%9C%EC%84%A4%EA%B4%80%EB%A6%AC" for ::1 at 2025-08-06 16:27:34 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"department" => "시설관리", "announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements?department=%ED%96%89%EC%A0%95%EB%B6%80" for ::1 at 2025-08-06 16:27:36 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"department" => "행정부", "announcement" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 16:27:43 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 16:39:56 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 16:40:06 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:09 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 16:40:09 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:12 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:29 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:30 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:31 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 16:40:39 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:45 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:47 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 16:40:58 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 18:05:18 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 200 OK in 253ms (Views: 0.1ms | ActiveRecord: 4.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 18:05:39 +0900
+Processing by Api::V1::EmployeesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.1ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (1.0ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 74ms (Views: 0.3ms | ActiveRecord: 13.4ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 18:06:45 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+JWT decode error: Not enough or too many segments
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/auth/login" for ::1 at 2025-08-06 18:06:49 +0900
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]", "auth" => {"email" => "[FILTERED]", "password" => "[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@hospital.com' LIMIT 1 /*action='login',application='Backend',controller='auth'*/[0m
+  ↳ app/controllers/api/v1/auth_controller.rb:5:in 'Api::V1::AuthController#login'
+Completed 200 OK in 142ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 18:06:51 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 18:06:53 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.4ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 18:06:59 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.1ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.2ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/employees" for ::1 at 2025-08-06 18:07:35 +0900
+Processing by Api::V1::EmployeesController#create as */*
+  Parameters: {"employee" => {"name" => "문명재", "department" => "행정부", "position" => "이사", "employment_type" => "full_time", "hire_date" => "2025-08-01", "salary_type" => "monthly", "phone" => "01033716033", "email" => "[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER('admin@himchanhealth.com') LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+Completed 422 Unprocessable Content in 12ms (Views: 0.2ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/employees" for ::1 at 2025-08-06 18:07:43 +0900
+Processing by Api::V1::EmployeesController#create as */*
+  Parameters: {"employee" => {"name" => "문명재", "department" => "행정부", "position" => "이사", "employment_type" => "full_time", "hire_date" => "2025-08-01", "salary_type" => "monthly", "phone" => "01033716033", "email" => "[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER('admin@himchanhealth.com') LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+Completed 422 Unprocessable Content in 6ms (Views: 0.1ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/employees" for ::1 at 2025-08-06 18:07:52 +0900
+Processing by Api::V1::EmployeesController#create as */*
+  Parameters: {"employee" => {"name" => "문명재", "department" => "행정부", "position" => "이사", "employment_type" => "full_time", "hire_date" => "2025-08-01", "salary_type" => "hourly", "phone" => "01033716033", "email" => "[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mEmployee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER('admin@himchanhealth.com') LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+Completed 422 Unprocessable Content in 6ms (Views: 0.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/employees" for ::1 at 2025-08-06 18:07:56 +0900
+Processing by Api::V1::EmployeesController#create as */*
+  Parameters: {"employee" => {"name" => "문명재", "department" => "행정부", "position" => "이사", "employment_type" => "full_time", "hire_date" => "2025-08-01", "salary_type" => "daily", "phone" => "01033716033", "email" => "[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mEmployee Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER('admin@himchanhealth.com') LIMIT 1 /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:80:in 'Api::V1::EmployeesController#create'
+Completed 422 Unprocessable Content in 7ms (Views: 0.1ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 18:08:21 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.1ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.1ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:05:02 +0900
+Processing by Api::V1::EmployeesController#index as */*
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:13:05 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (106.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (1.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.7ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (1.1ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 122ms (Views: 0.4ms | ActiveRecord: 116.6ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:13:08 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.7ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/documents" for ::1 at 2025-08-06 19:13:09 +0900
+Processing by Api::V1::DocumentsController#index as */*
+  Parameters: {"document" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='documents'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mDocument Load (1.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" ORDER BY "documents"."updated_at" DESC /*action='index',application='Backend',controller='documents'*/[0m
+  ↳ app/controllers/api/v1/documents_controller.rb:24:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 19:13:10 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='department_posts'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mDepartmentPost Load (0.8ms)[0m  [1m[34mSELECT "department_posts".* FROM "department_posts" ORDER BY "department_posts"."created_at" DESC /*action='index',application='Backend',controller='department_posts'*/[0m
+  ↳ app/controllers/api/v1/department_posts_controller.rb:12:in 'Enumerable#map'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:13:11 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.3ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 1.8ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-08-06 19:13:46 +0900
+Processing by Api::V1::HomeController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:13:48 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.2ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.4ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:16:37 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (0.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (0.2ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.8ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/employees" for ::1 at 2025-08-06 19:26:50 +0900
+Processing by Api::V1::EmployeesController#index as */*
+  Parameters: {"employee" => {}}
+  [1m[36mUser Load (119.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."name" ASC /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mAttendance Load (1.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mLeaveRequest Load (1.3ms)[0m  [1m[34mSELECT "leave_requests".* FROM "leave_requests" WHERE "leave_requests"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mPayroll Load (1.0ms)[0m  [1m[34mSELECT "payrolls".* FROM "payrolls" WHERE "payrolls"."employee_id" IN (7, 1, 12, 3, 9, 8, 2, 10, 5, 11, 4, 6) /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:23:in 'Enumerable#map'
+  [1m[36mEmployee Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" /*action='index',application='Backend',controller='employees'*/[0m
+  ↳ app/controllers/api/v1/employees_controller.rb:46:in 'Api::V1::EmployeesController#index'
+Completed 200 OK in 135ms (Views: 0.6ms | ActiveRecord: 129.0ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/department_posts" for ::1 at 2025-08-06 19:42:52 +0900
+Processing by Api::V1::DepartmentPostsController#index as */*
+  Parameters: {"department_post" => {}}
+  [1m[36mUser Load (94.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='department_posts'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mDepartmentPost Load (0.6ms)[0m  [1m[34mSELECT "department_posts".* FROM "department_posts" ORDER BY "department_posts"."created_at" DESC /*action='index',application='Backend',controller='department_posts'*/[0m
+  ↳ app/controllers/api/v1/department_posts_controller.rb:12:in 'Enumerable#map'
+Completed 200 OK in 98ms (Views: 0.1ms | ActiveRecord: 99.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/announcements" for ::1 at 2025-08-06 19:42:53 +0900
+Processing by Api::V1::AnnouncementsController#index as */*
+  Parameters: {"announcement" => {}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Backend',controller='announcements'*/[0m
+  ↳ app/models/user.rb:42:in 'User.decode_jwt_token'
+  [1m[36mAnnouncement Load (0.8ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements" WHERE "announcements"."is_published" = TRUE ORDER BY "announcements"."published_at" DESC /*action='index',application='Backend',controller='announcements'*/[0m
+  ↳ app/controllers/api/v1/announcements_controller.rb:11:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dotenv] Set [36mDATABASE_HOST[0m, [36mDATABASE_NAME_DEVELOPMENT[0m, [36mDATABASE_NAME_TEST[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_PORT[0m, [36mDATABASE_USERNAME[0m, [36mFRONTEND_URL[0m, [36mJWT_EXPIRATION_HOURS[0m, [36mJWT_SECRET_KEY[0m, [36mRAILS_ENV[0m, and [36mRAILS_MAX_THREADS[0m
+[dotenv] Loaded [33m.env[0m

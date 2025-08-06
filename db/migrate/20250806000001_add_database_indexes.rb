@@ -30,8 +30,9 @@ class AddDatabaseIndexes < ActiveRecord::Migration[8.0]
     # Payrolls 테이블 인덱스 (있다면)
     if table_exists?(:payrolls)
       add_index :payrolls, :employee_id unless index_exists?(:payrolls, :employee_id)
-      add_index :payrolls, :pay_period unless index_exists?(:payrolls, :pay_period)
-      add_index :payrolls, [:employee_id, :pay_period], unique: true unless index_exists?(:payrolls, [:employee_id, :pay_period])
+      add_index :payrolls, :pay_period_start unless index_exists?(:payrolls, :pay_period_start)
+      add_index :payrolls, :status unless index_exists?(:payrolls, :status)
+      add_index :payrolls, [:employee_id, :pay_period_start] unless index_exists?(:payrolls, [:employee_id, :pay_period_start])
     end
   end
 end

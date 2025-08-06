@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -63,7 +63,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["employee_id", "work_date"], name: "index_attendances_on_employee_id_and_work_date", unique: true
     t.index ["employee_id"], name: "index_attendances_on_employee_id"
+    t.index ["work_date"], name: "index_attendances_on_work_date"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -120,6 +122,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["department", "status"], name: "index_employees_on_department_and_status"
+    t.index ["department"], name: "index_employees_on_department"
+    t.index ["email"], name: "index_employees_on_email", unique: true
+    t.index ["employment_type"], name: "index_employees_on_employment_type"
+    t.index ["hire_date"], name: "index_employees_on_hire_date"
+    t.index ["status"], name: "index_employees_on_status"
   end
 
   create_table "leave_requests", force: :cascade do |t|
@@ -135,7 +143,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["approver_id"], name: "index_leave_requests_on_approver_id"
+    t.index ["employee_id", "status"], name: "index_leave_requests_on_employee_id_and_status"
     t.index ["employee_id"], name: "index_leave_requests_on_employee_id"
+    t.index ["start_date"], name: "index_leave_requests_on_start_date"
+    t.index ["status"], name: "index_leave_requests_on_status"
   end
 
   create_table "payrolls", force: :cascade do |t|
@@ -152,7 +163,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["employee_id", "pay_period_start"], name: "index_payrolls_on_employee_id_and_pay_period_start"
     t.index ["employee_id"], name: "index_payrolls_on_employee_id"
+    t.index ["pay_period_start"], name: "index_payrolls_on_pay_period_start"
+    t.index ["status"], name: "index_payrolls_on_status"
   end
 
   create_table "users", force: :cascade do |t|
@@ -163,6 +177,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_115947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["role"], name: "index_users_on_role"
   end
 
   add_foreign_key "announcements", "users", column: "author_id"

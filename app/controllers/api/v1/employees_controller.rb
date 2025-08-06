@@ -1,12 +1,11 @@
 class Api::V1::EmployeesController < ApplicationController
+  # 인증 필요 (보안)
+  # skip_before_action :authenticate_request, only: [:index, :show]
   before_action :set_employee, only: [:show, :update, :destroy]
   
   def index
-    # N+1 쿼리 방지를 위한 includes 및 캐싱
+    # N+1 쿼리 방지를 위한 includes
     @employees = Employee.includes(:attendances, :leave_requests, :payrolls)
-                        .select(:id, :name, :department, :position, :employment_type, 
-                               :hire_date, :phone, :email, :status, :base_salary, 
-                               :hourly_rate, :salary_type, :created_at, :updated_at)
     
     # 필터링
     @employees = @employees.where(department: params[:department]) if params[:department].present?

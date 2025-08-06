@@ -9,6 +9,26 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :employees, except: [:new, :edit]
+      resources :attendances, except: [:new, :edit] do
+        collection do
+          post :check_in
+          post :check_out
+          get :statistics
+          get :today_status
+        end
+      end
+      resources :leave_requests, except: [:new, :edit] do
+        collection do
+          get :pending_approvals
+          get :statistics
+          get :annual_leave_status
+        end
+        member do
+          patch :approve
+          patch :reject
+          patch :cancel
+        end
+      end
       resources :documents, except: [:new, :edit] do
         member do
           post :request_approval
