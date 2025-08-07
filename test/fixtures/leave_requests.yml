@@ -1,23 +1,47 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  employee: one
-  leave_type: MyString
-  start_date: 2025-08-05
-  end_date: 2025-08-05
-  days_requested: 1
-  reason: MyText
-  status: MyString
-  approver: one
-  approved_at: 2025-08-05 20:59:47
+# Leave request fixtures for testing vacation management system
 
-two:
-  employee: two
-  leave_type: MyString
-  start_date: 2025-08-05
-  end_date: 2025-08-05
-  days_requested: 1
-  reason: MyText
-  status: MyString
-  approver: two
-  approved_at: 2025-08-05 20:59:47
+pending_annual_leave:
+  employee: kim_doctor
+  leave_type: "annual"
+  start_date: 2025-08-15
+  end_date: 2025-08-17
+  days_requested: 3
+  reason: "가족 여행"
+  status: "pending"
+  approver: null
+  approved_at: null
+
+approved_sick_leave:
+  employee: lee_nurse
+  leave_type: "sick"
+  start_date: 2025-07-20
+  end_date: 2025-07-21
+  days_requested: 2
+  reason: "몸살 감기"
+  status: "approved"
+  approver: manager_user
+  approved_at: 2025-07-18 10:00:00
+
+rejected_leave:
+  employee: park_admin
+  leave_type: "personal"
+  start_date: 2025-08-10
+  end_date: 2025-08-12
+  days_requested: 3
+  reason: "개인 사정"
+  status: "rejected"
+  approver: manager_user
+  approved_at: null
+
+cancelled_leave:
+  employee: new_employee
+  leave_type: "annual"
+  start_date: 2025-08-20
+  end_date: 2025-08-22
+  days_requested: 3
+  reason: "계획 변경으로 취소"
+  status: "cancelled"
+  approver: null
+  approved_at: null

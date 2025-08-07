@@ -1,27 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  employee: one
-  pay_period_start: 2025-08-05
-  pay_period_end: 2025-08-05
-  base_pay: 9.99
-  overtime_pay: 9.99
-  night_pay: 9.99
-  allowances: 9.99
-  deductions: 9.99
-  tax: 9.99
-  net_pay: 9.99
-  status: MyString
+kim_payroll_july:
+  employee: kim_doctor
+  pay_period_start: 2025-07-01
+  pay_period_end: 2025-07-31
+  base_pay: 5000000
+  overtime_pay: 500000
+  night_pay: 0
+  allowances: 300000
+  deductions: 200000
+  tax: 1100000
+  net_pay: 4500000
+  status: "processed"
 
-two:
-  employee: two
-  pay_period_start: 2025-08-05
-  pay_period_end: 2025-08-05
-  base_pay: 9.99
-  overtime_pay: 9.99
-  night_pay: 9.99
-  allowances: 9.99
-  deductions: 9.99
-  tax: 9.99
-  net_pay: 9.99
-  status: MyString
+lee_payroll_july:
+  employee: lee_nurse
+  pay_period_start: 2025-07-01
+  pay_period_end: 2025-07-31
+  base_pay: 3500000
+  overtime_pay: 300000
+  night_pay: 200000
+  allowances: 200000
+  deductions: 150000
+  tax: 750000
+  net_pay: 3300000
+  status: "processed"

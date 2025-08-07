@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  content: MyText
-  author: one
-  department_post: one
-  parent: one
+first_comment:
+  content: "좋은 정보 감사합니다."
+  author: staff_user
+  department_post: nursing_post
+  parent: null
 
-two:
-  content: MyText
-  author: two
-  department_post: two
-  parent: two
+reply_comment:
+  content: "네, 추가 질문 있으면 언제든지 문의해 주세요."
+  author: manager_user
+  department_post: nursing_post
+  parent: first_comment

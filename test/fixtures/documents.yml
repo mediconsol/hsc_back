@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  content: MyText
-  document_type: MyString
-  author: one
-  department: MyString
+policy_document:
+  title: "안전 수칙"
+  content: "병원 내 안전 수칙에 대한 내용"
+  document_type: "policy"
+  author: admin_user
+  department: "행정부"
   security_level: 1
-  status: MyString
+  status: "approved"
   version: 1
 
-two:
-  title: MyString
-  content: MyText
-  document_type: MyString
-  author: two
-  department: MyString
-  security_level: 1
-  status: MyString
+procedure_document:
+  title: "진료 절차"
+  content: "환자 진료 절차에 대한 가이드라인"
+  document_type: "procedure"
+  author: manager_user
+  department: "의료진"
+  security_level: 2
+  status: "draft"
   version: 1

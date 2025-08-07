@@ -1,0 +1,1261 @@
+openapi: 3.0.1
+info:
+  title: Hospital Management System API
+  description: |
+    병원 통합 관리 시스템 REST API 문서
+    
+    ## 인증
+    JWT 토큰 기반 인증을 사용합니다. 로그인 후 받은 토큰을 Authorization 헤더에 포함하세요.
+    
+    ## 권한 레벨
+    - **0 (read_only)**: 읽기 전용
+    - **1 (staff)**: 일반 직원
+    - **2 (manager)**: 관리자
+    - **3 (admin)**: 시스템 관리자
+    
+    ## 응답 형식
+    모든 API는 다음 형식으로 응답합니다:
+    ```json
+    {
+      "status": "success|error",
+      "message": "응답 메시지",
+      "data": { ... },
+      "errors": { ... },
+      "timestamp": "2025-08-07T10:00:00Z",
+      "request_id": "uuid"
+    }
+    ```
+    
+  version: v1
+  contact:
+    name: Hospital IT Team
+    email: it@hospital.com
+  license:
+    name: MIT License
+    
+servers:
+  - url: http://localhost:7001
+    description: Development server
+  - url: https://api.hospital.com
+    description: Production server
+
+paths:
+  # Authentication Endpoints
+  /api/v1/auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: 사용자 로그인
+      description: 이메일과 비밀번호로 로그인하고 JWT 토큰을 반환합니다.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: admin@hospital.com
+                password:
+                  type: string
+                  format: password
+                  example: password123
+      responses:
+        '200':
+          description: 로그인 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: 인증 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 잘못된 요청 데이터
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
+  /api/v1/auth/me:
+    get:
+      tags:
+        - Authentication
+      summary: 현재 사용자 정보 조회
+      description: JWT 토큰으로 현재 로그인한 사용자의 정보를 조회합니다.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 사용자 정보 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/User'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/logout:
+    delete:
+      tags:
+        - Authentication
+      summary: 로그아웃
+      description: 현재 JWT 토큰을 무효화합니다.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 로그아웃 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # Employee Management Endpoints
+  /api/v1/employees:
+    get:
+      tags:
+        - Employees
+      summary: 직원 목록 조회
+      description: |
+        직원 목록을 조회합니다. 관리자(manager) 이상의 권한이 필요합니다.
+        필터링, 검색, 페이징을 지원합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: department
+          in: query
+          description: 부서별 필터링
+          schema:
+            type: string
+            enum: [의료진, 간호부, 행정부, 시설관리]
+        - name: status
+          in: query
+          description: 상태별 필터링
+          schema:
+            type: string
+            enum: [active, inactive, on_leave]
+        - name: employment_type
+          in: query
+          description: 고용형태별 필터링
+          schema:
+            type: string
+            enum: [full_time, contract, part_time, intern]
+        - name: search
+          in: query
+          description: 이름 또는 이메일 검색
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: 페이지 번호
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: per_page
+          in: query
+          description: 페이지당 항목 수
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: 직원 목록 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          employees:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Employee'
+                          total_count:
+                            type: integer
+                            example: 150
+                          pagination:
+                            $ref: '#/components/schemas/Pagination'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족 (관리자 이상 필요)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      tags:
+        - Employees
+      summary: 새 직원 등록
+      description: 새 직원을 등록합니다. 시스템 관리자(admin) 권한이 필요합니다.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeCreateRequest'
+      responses:
+        '201':
+          description: 직원 등록 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          employee:
+                            $ref: '#/components/schemas/Employee'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족 (관리자 필요)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 잘못된 요청 데이터
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
+  /api/v1/employees/{id}:
+    get:
+      tags:
+        - Employees
+      summary: 직원 상세 정보 조회
+      description: 특정 직원의 상세 정보를 조회합니다. 관리자(manager) 이상의 권한이 필요합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 직원 ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 직원 정보 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          employee:
+                            $ref: '#/components/schemas/EmployeeDetailed'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: 직원을 찾을 수 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    patch:
+      tags:
+        - Employees
+      summary: 직원 정보 수정
+      description: 직원 정보를 수정합니다. 시스템 관리자(admin) 권한이 필요합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 직원 ID
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeUpdateRequest'
+      responses:
+        '200':
+          description: 직원 정보 수정 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          employee:
+                            $ref: '#/components/schemas/Employee'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: 직원을 찾을 수 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 잘못된 요청 데이터
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
+    delete:
+      tags:
+        - Employees
+      summary: 직원 삭제
+      description: 직원을 삭제합니다. 시스템 관리자(admin) 권한이 필요합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 직원 ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 직원 삭제 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: 직원을 찾을 수 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # Leave Request Management Endpoints
+  /api/v1/leave_requests:
+    get:
+      tags:
+        - Leave Requests
+      summary: 휴가 신청 목록 조회
+      description: |
+        휴가 신청 목록을 조회합니다. 권한에 따라 조회 범위가 달라집니다:
+        - 일반 직원: 본인의 휴가 신청만 조회
+        - 관리자 이상: 모든 휴가 신청 조회
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: employee_id
+          in: query
+          description: 직원 ID (관리자만 사용 가능)
+          schema:
+            type: integer
+        - name: status
+          in: query
+          description: 승인 상태별 필터링
+          schema:
+            type: string
+            enum: [pending, approved, rejected, cancelled]
+        - name: leave_type
+          in: query
+          description: 휴가 유형별 필터링
+          schema:
+            type: string
+            enum: [annual, sick, personal, bereavement]
+        - name: year
+          in: query
+          description: 연도별 필터링
+          schema:
+            type: integer
+            example: 2025
+        - name: month
+          in: query
+          description: 월별 필터링
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 12
+        - name: page
+          in: query
+          description: 페이지 번호
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: per_page
+          in: query
+          description: 페이지당 항목 수
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: 휴가 신청 목록 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          leave_requests:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/LeaveRequest'
+                          total_count:
+                            type: integer
+                            example: 50
+                          pagination:
+                            $ref: '#/components/schemas/Pagination'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      tags:
+        - Leave Requests
+      summary: 새 휴가 신청
+      description: 새로운 휴가 신청을 생성합니다. 인증된 모든 사용자가 사용할 수 있습니다.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeaveRequestCreateRequest'
+      responses:
+        '201':
+          description: 휴가 신청 생성 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          leave_request:
+                            $ref: '#/components/schemas/LeaveRequest'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 잘못된 요청 데이터
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
+  /api/v1/leave_requests/statistics:
+    get:
+      tags:
+        - Leave Requests
+      summary: 휴가 통계 조회
+      description: |
+        휴가 신청 통계를 조회합니다. 권한에 따라 조회 범위가 달라집니다:
+        - 일반 직원: 본인의 휴가 통계만 조회
+        - 관리자 이상: 전체 휴가 통계 조회
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: year
+          in: query
+          description: 연도별 통계 (기본값: 현재 연도)
+          schema:
+            type: integer
+            example: 2025
+        - name: department
+          in: query
+          description: 부서별 통계 (관리자만 사용 가능)
+          schema:
+            type: string
+            enum: [의료진, 간호부, 행정부, 시설관리]
+      responses:
+        '200':
+          description: 휴가 통계 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/LeaveRequestStatistics'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/leave_requests/annual_leave_status:
+    get:
+      tags:
+        - Leave Requests
+      summary: 연차 현황 조회
+      description: |
+        연차 현황을 조회합니다. employee_id가 없으면 현재 사용자의 연차 현황을 조회합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: employee_id
+          in: query
+          description: 직원 ID (관리자만 다른 직원 조회 가능)
+          schema:
+            type: integer
+        - name: year
+          in: query
+          description: 연도 (기본값: 현재 연도)
+          schema:
+            type: integer
+            example: 2025
+      responses:
+        '200':
+          description: 연차 현황 조회 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/AnnualLeaveStatus'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족 (다른 직원 조회 시)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/leave_requests/{id}/approve:
+    patch:
+      tags:
+        - Leave Requests
+      summary: 휴가 신청 승인
+      description: 휴가 신청을 승인합니다. 관리자(manager) 이상의 권한이 필요합니다.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: 휴가 신청 ID
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                admin_notes:
+                  type: string
+                  description: 관리자 메모
+                  example: "휴가 승인합니다."
+      responses:
+        '200':
+          description: 휴가 승인 성공
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          leave_request:
+                            $ref: '#/components/schemas/LeaveRequest'
+        '401':
+          description: 인증되지 않은 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: 권한 부족
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: 휴가 신청을 찾을 수 없음
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 승인할 수 없는 상태
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT 토큰을 Authorization 헤더에 포함하세요. 예) Authorization: Bearer YOUR_TOKEN
+
+  schemas:
+    # Response Schemas
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: "요청이 성공적으로 처리되었습니다."
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+        request_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: "오류가 발생했습니다."
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+        request_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+
+    ValidationErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: "입력 데이터에 오류가 있습니다."
+        errors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          example:
+            name: ["이름은 필수입니다."]
+            email: ["올바른 이메일 형식이 아닙니다."]
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+        request_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+
+    LoginResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: "로그인에 성공했습니다."
+        data:
+          type: object
+          properties:
+            user:
+              $ref: '#/components/schemas/User'
+            token:
+              type: string
+              example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            expires_at:
+              type: string
+              format: date-time
+              example: "2025-08-14T10:00:00Z"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+        request_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+
+    Pagination:
+      type: object
+      properties:
+        current_page:
+          type: integer
+          example: 1
+        per_page:
+          type: integer
+          example: 20
+        total_pages:
+          type: integer
+          example: 10
+        total_count:
+          type: integer
+          example: 200
+        has_next_page:
+          type: boolean
+          example: true
+        has_prev_page:
+          type: boolean
+          example: false
+
+    # Entity Schemas
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "김관리자"
+        email:
+          type: string
+          format: email
+          example: "admin@hospital.com"
+        role:
+          type: integer
+          description: "권한 레벨 (0: read_only, 1: staff, 2: manager, 3: admin)"
+          example: 3
+        role_name:
+          type: string
+          example: "admin"
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-01-01T00:00:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+
+    Employee:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "김의사"
+        department:
+          type: string
+          enum: [의료진, 간호부, 행정부, 시설관리]
+          example: "의료진"
+        position:
+          type: string
+          example: "주치의"
+        employment_type:
+          type: string
+          enum: [full_time, contract, part_time, intern]
+          example: "full_time"
+        hire_date:
+          type: string
+          format: date
+          example: "2023-01-15"
+        phone:
+          type: string
+          example: "010-1234-5678"
+        email:
+          type: string
+          format: email
+          example: "kim.doctor@hospital.com"
+        base_salary:
+          type: integer
+          example: 8000000
+        salary_type:
+          type: string
+          enum: [monthly, hourly]
+          example: "monthly"
+        status:
+          type: string
+          enum: [active, inactive, on_leave]
+          example: "active"
+        created_at:
+          type: string
+          format: date-time
+          example: "2023-01-15T09:00:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          example: "2025-08-07T10:00:00Z"
+
+    EmployeeDetailed:
+      allOf:
+        - $ref: '#/components/schemas/Employee'
+        - type: object
+          properties:
+            years_employed:
+              type: number
+              format: float
+              example: 2.5
+            annual_leave_balance:
+              type: integer
+              example: 12
+            total_leave_requests:
+              type: integer
+              example: 15
+            pending_leave_requests:
+              type: integer
+              example: 2
+
+    EmployeeCreateRequest:
+      type: object
+      required:
+        - employee
+      properties:
+        employee:
+          type: object
+          required:
+            - name
+            - department
+            - position
+            - employment_type
+            - hire_date
+            - email
+            - salary_type
+          properties:
+            name:
+              type: string
+              minLength: 2
+              maxLength: 50
+              example: "새로운의사"
+            department:
+              type: string
+              enum: [의료진, 간호부, 행정부, 시설관리]
+              example: "의료진"
+            position:
+              type: string
+              minLength: 2
+              maxLength: 30
+              example: "전문의"
+            employment_type:
+              type: string
+              enum: [full_time, contract, part_time, intern]
+              example: "full_time"
+            hire_date:
+              type: string
+              format: date
+              example: "2025-08-01"
+            phone:
+              type: string
+              pattern: '^[0-9\-\s()]+$'
+              example: "010-1234-5678"
+            email:
+              type: string
+              format: email
+              example: "new.doctor@hospital.com"
+            base_salary:
+              type: integer
+              minimum: 0
+              maximum: 99999999
+              example: 8000000
+            salary_type:
+              type: string
+              enum: [monthly, hourly]
+              example: "monthly"
+            hourly_rate:
+              type: integer
+              minimum: 0
+              maximum: 99999
+              description: "시급 (salary_type이 hourly일 때만 필요)"
+              example: 25000
+
+    EmployeeUpdateRequest:
+      type: object
+      required:
+        - employee
+      properties:
+        employee:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 2
+              maxLength: 50
+              example: "수정된이름"
+            department:
+              type: string
+              enum: [의료진, 간호부, 행정부, 시설관리]
+              example: "의료진"
+            position:
+              type: string
+              minLength: 2
+              maxLength: 30
+              example: "수석의사"
+            employment_type:
+              type: string
+              enum: [full_time, contract, part_time, intern]
+              example: "full_time"
+            phone:
+              type: string
+              pattern: '^[0-9\-\s()]+$'
+              example: "010-5678-1234"
+            email:
+              type: string
+              format: email
+              example: "updated.doctor@hospital.com"
+            base_salary:
+              type: integer
+              minimum: 0
+              maximum: 99999999
+              example: 9000000
+            status:
+              type: string
+              enum: [active, inactive, on_leave]
+              example: "active"
+
+    LeaveRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        employee_id:
+          type: integer
+          example: 5
+        employee_name:
+          type: string
+          example: "김의사"
+        leave_type:
+          type: string
+          enum: [annual, sick, personal, bereavement]
+          example: "annual"
+        start_date:
+          type: string
+          format: date
+          example: "2025-08-15"
+        end_date:
+          type: string
+          format: date
+          example: "2025-08-17"
+        days_requested:
+          type: integer
+          example: 3
+        reason:
+          type: string
+          example: "가족 여행"
+        status:
+          type: string
+          enum: [pending, approved, rejected, cancelled]
+          example: "approved"
+        approver_id:
+          type: integer
+          example: 1
+        approver_name:
+          type: string
+          example: "관리자"
+        approved_at:
+          type: string
+          format: date-time
+          example: "2025-08-10T14:30:00Z"
+        admin_notes:
+          type: string
+          example: "휴가 승인합니다."
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-08-05T09:00:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          example: "2025-08-10T14:30:00Z"
+
+    LeaveRequestCreateRequest:
+      type: object
+      required:
+        - employee_id
+        - leave_request
+      properties:
+        employee_id:
+          type: integer
+          example: 5
+        leave_request:
+          type: object
+          required:
+            - leave_type
+            - start_date
+            - end_date
+            - days_requested
+            - reason
+          properties:
+            leave_type:
+              type: string
+              enum: [annual, sick, personal, bereavement]
+              example: "annual"
+            start_date:
+              type: string
+              format: date
+              example: "2025-08-15"
+            end_date:
+              type: string
+              format: date
+              example: "2025-08-17"
+            days_requested:
+              type: integer
+              minimum: 1
+              example: 3
+            reason:
+              type: string
+              minLength: 5
+              maxLength: 500
+              example: "가족 여행으로 인한 연차 사용"
+
+    LeaveRequestStatistics:
+      type: object
+      properties:
+        total_requests:
+          type: integer
+          example: 145
+        pending_requests:
+          type: integer
+          example: 8
+        approved_requests:
+          type: integer
+          example: 120
+        rejected_requests:
+          type: integer
+          example: 12
+        cancelled_requests:
+          type: integer
+          example: 5
+        total_days_requested:
+          type: integer
+          example: 450
+        by_leave_type:
+          type: object
+          properties:
+            annual:
+              type: integer
+              example: 350
+            sick:
+              type: integer
+              example: 60
+            personal:
+              type: integer
+              example: 35
+            bereavement:
+              type: integer
+              example: 5
+        by_department:
+          type: object
+          properties:
+            의료진:
+              type: integer
+              example: 180
+            간호부:
+              type: integer
+              example: 150
+            행정부:
+              type: integer
+              example: 90
+            시설관리:
+              type: integer
+              example: 30
+        by_month:
+          type: array
+          items:
+            type: object
+            properties:
+              month:
+                type: integer
+                example: 8
+              count:
+                type: integer
+                example: 25
+              days:
+                type: integer
+                example: 75
+
+    AnnualLeaveStatus:
+      type: object
+      properties:
+        employee_id:
+          type: integer
+          example: 5
+        employee_name:
+          type: string
+          example: "김의사"
+        year:
+          type: integer
+          example: 2025
+        total_annual_leave:
+          type: integer
+          description: "연간 총 연차 일수"
+          example: 18
+        used_annual_leave:
+          type: integer
+          description: "사용한 연차 일수"
+          example: 6
+        remaining_annual_leave:
+          type: integer
+          description: "잔여 연차 일수"
+          example: 12
+        pending_annual_leave:
+          type: integer
+          description: "승인 대기 중인 연차 일수"
+          example: 3
+        leave_details:
+          type: array
+          description: "연차 사용 내역"
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 15
+              start_date:
+                type: string
+                format: date
+                example: "2025-07-15"
+              end_date:
+                type: string
+                format: date
+                example: "2025-07-17"
+              days_requested:
+                type: integer
+                example: 3
+              status:
+                type: string
+                enum: [pending, approved, rejected, cancelled]
+                example: "approved"
+              reason:
+                type: string
+                example: "여름 휴가"
+
+tags:
+  - name: Authentication
+    description: 사용자 인증 관련 API
+  - name: Employees
+    description: 직원 관리 API
+  - name: Leave Requests
+    description: 휴가 신청 관리 API
+  - name: Attendances
+    description: 출근 관리 API (별도 문서화 예정)
+  - name: Announcements
+    description: 공지사항 관리 API (별도 문서화 예정)
+  - name: Documents
+    description: 문서 관리 API (별도 문서화 예정)

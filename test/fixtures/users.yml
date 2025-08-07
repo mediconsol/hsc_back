@@ -1,0 +1,25 @@
+# User fixtures for testing vacation management system
+
+admin_user:
+  name: "관리자"
+  email: "admin@hospital.com"
+  password_digest: "<%= BCrypt::Password.create('password123') %>"
+  role: 0  # admin
+
+manager_user:
+  name: "매니저"
+  email: "manager@hospital.com"
+  password_digest: "<%= BCrypt::Password.create('password123') %>"
+  role: 1  # manager
+
+staff_user:
+  name: "직원"
+  email: "staff@hospital.com"
+  password_digest: "<%= BCrypt::Password.create('password123') %>"
+  role: 2  # staff
+
+approver_user:
+  name: "승인자"
+  email: "approver@hospital.com"
+  password_digest: "<%= BCrypt::Password.create('password123') %>"
+  role: 1  # manager

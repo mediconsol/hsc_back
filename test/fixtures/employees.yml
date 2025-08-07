@@ -1,27 +1,55 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  department: MyString
-  position: MyString
-  employment_type: MyString
-  hire_date: 2025-08-05
-  phone: MyString
-  email: MyString
-  base_salary: 9.99
-  hourly_rate: 9.99
-  salary_type: MyString
-  status: MyString
+# Employee fixtures for testing vacation management system
 
-two:
-  name: MyString
-  department: MyString
-  position: MyString
-  employment_type: MyString
-  hire_date: 2025-08-05
-  phone: MyString
-  email: MyString
-  base_salary: 9.99
-  hourly_rate: 9.99
-  salary_type: MyString
-  status: MyString
+kim_doctor:
+  name: "김의사"
+  department: "의료진"
+  position: "주치의"
+  employment_type: "full_time"
+  hire_date: 2020-01-01
+  phone: "010-1234-5678"
+  email: "kim.doctor@hospital.com"
+  base_salary: 5000000
+  hourly_rate: null
+  salary_type: "monthly"
+  status: "active"
+
+lee_nurse:
+  name: "이간호사"
+  department: "간호부"
+  position: "수간호사"
+  employment_type: "full_time"
+  hire_date: 2019-03-15
+  phone: "010-2345-6789"
+  email: "lee.nurse@hospital.com"
+  base_salary: 3500000
+  hourly_rate: null
+  salary_type: "monthly"
+  status: "active"
+
+park_admin:
+  name: "박관리자"
+  department: "행정부"
+  position: "팀장"
+  employment_type: "full_time"
+  hire_date: 2021-06-10
+  phone: "010-3456-7890"
+  email: "park.admin@hospital.com"
+  base_salary: 4000000
+  hourly_rate: null
+  salary_type: "monthly"
+  status: "active"
+
+new_employee:
+  name: "신입직원"
+  department: "행정부"
+  position: "사원"
+  employment_type: "full_time"
+  hire_date: 2024-01-01
+  phone: "010-4567-8901"
+  email: "new.employee@hospital.com"
+  base_salary: 2800000
+  hourly_rate: null
+  salary_type: "monthly"
+  status: "active"

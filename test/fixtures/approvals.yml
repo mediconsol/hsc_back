@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  document: one
-  approver: one
-  status: MyString
-  comments: MyText
+policy_approval:
+  document: policy_document
+  approver: admin_user
+  status: "approved"
+  comments: "승인합니다. 모든 직원이 준수해 주세요."
   approved_at: 2025-08-05 20:49:41
   order_index: 1
 
-two:
-  document: two
-  approver: two
-  status: MyString
-  comments: MyText
-  approved_at: 2025-08-05 20:49:41
+procedure_review:
+  document: procedure_document
+  approver: manager_user
+  status: "pending"
+  comments: "검토 중입니다."
+  approved_at: null
   order_index: 1

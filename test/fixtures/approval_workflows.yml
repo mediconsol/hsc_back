@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  document: one
-  workflow_name: MyString
-  approvers_data: MyText
-  workflow_type: MyString
-  is_sequential: false
+policy_workflow:
+  document: policy_document
+  workflow_name: "정책 승인 워크플로우"
+  approvers_data: "[{\"approver_id\": 1, \"order\": 1}]"
+  workflow_type: "sequential"
+  is_sequential: true
 
-two:
-  document: two
-  workflow_name: MyString
-  approvers_data: MyText
-  workflow_type: MyString
-  is_sequential: false
+procedure_workflow:
+  document: procedure_document
+  workflow_name: "절차 검토 워크플로우"
+  approvers_data: "[{\"approver_id\": 2, \"order\": 1}, {\"approver_id\": 1, \"order\": 2}]"
+  workflow_type: "sequential"
+  is_sequential: true

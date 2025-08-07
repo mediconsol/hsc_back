@@ -50,4 +50,32 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  
+  # API documentation with OpenAPI/Swagger
+  gem "rswag", "~> 2.13"
+end
+
+group :development do
+  # API documentation UI
+  gem "rswag-ui", "~> 2.13"
+end
+
+group :test do
+  # Mocking and stubbing library
+  gem "mocha", require: false
+  
+  # Factory Bot for test data generation
+  gem "factory_bot_rails", "~> 6.4"
+  
+  # Faker for generating realistic fake data
+  gem "faker", "~> 3.4"
+  
+  # Database cleaner for test isolation
+  gem "database_cleaner-active_record", "~> 2.1"
+  
+  # Test coverage
+  gem "simplecov", "~> 0.22", require: false
+  
+  # Performance testing
+  gem "benchmark-ips", "~> 2.12"
 end

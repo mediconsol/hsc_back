@@ -1,23 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  employee: one
-  check_in: 2025-08-05 20:59:14
-  check_out: 2025-08-05 20:59:14
+kim_attendance_today:
+  employee: kim_doctor
+  check_in: 2025-08-05 08:30:00
+  check_out: 2025-08-05 18:00:00
   work_date: 2025-08-05
-  regular_hours: 9.99
-  overtime_hours: 9.99
-  night_hours: 9.99
-  status: MyString
-  notes: MyText
+  regular_hours: 8.0
+  overtime_hours: 1.5
+  night_hours: 0.0
+  status: "present"
+  notes: "정상 근무"
 
-two:
-  employee: two
-  check_in: 2025-08-05 20:59:14
-  check_out: 2025-08-05 20:59:14
+lee_attendance_today:
+  employee: lee_nurse
+  check_in: 2025-08-05 07:00:00
+  check_out: 2025-08-05 19:00:00
   work_date: 2025-08-05
-  regular_hours: 9.99
-  overtime_hours: 9.99
-  night_hours: 9.99
-  status: MyString
-  notes: MyText
+  regular_hours: 8.0
+  overtime_hours: 4.0
+  night_hours: 0.0
+  status: "present"
+  notes: "야근 근무"

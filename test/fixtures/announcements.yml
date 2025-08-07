@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  content: MyText
+important_notice:
+  title: "중요 공지사항"
+  content: "모든 직원은 새로운 안전 규정을 준수해 주세요."
   priority: 1
-  author: one
-  department: MyString
+  author: admin_user
+  department: "행정부"
   published_at: 2025-08-05 20:36:13
-  is_published: false
+  is_published: true
 
-two:
-  title: MyString
-  content: MyText
-  priority: 1
-  author: two
-  department: MyString
+daily_notice:
+  title: "일반 공지"
+  content: "회의실 예약에 대한 안내입니다."
+  priority: 2
+  author: manager_user
+  department: "행정부"
   published_at: 2025-08-05 20:36:13
   is_published: false

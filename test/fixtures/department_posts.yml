@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  content: MyText
-  author: one
-  department: MyString
-  category: MyString
+nursing_post:
+  title: "간호부 업무 공지"
+  content: "새로운 간호 절차에 대한 안내"
+  author: manager_user
+  department: "간호부"
+  category: "notice"
   priority: 1
   is_public: false
-  views_count: 1
+  views_count: 5
 
-two:
-  title: MyString
-  content: MyText
-  author: two
-  department: MyString
-  category: MyString
-  priority: 1
-  is_public: false
-  views_count: 1
+medical_post:
+  title: "의료진 회의 안내"
+  content: "월례 의료진 회의 일정 안내"
+  author: admin_user
+  department: "의료진"
+  category: "meeting"
+  priority: 2
+  is_public: true
+  views_count: 12
