@@ -33,13 +33,61 @@ Rails.application.routes.draw do
           patch :cancel
         end
       end
+      resources :payrolls, except: [:new, :edit] do
+        collection do
+          get :monthly_summary
+        end
+      end
       resources :documents, except: [:new, :edit] do
         member do
           post :request_approval
         end
       end
+      
+      # 예약/접수 관련 라우트
+      resources :patients, except: [:new, :edit] do
+        collection do
+          get :search
+          get :statistics
+        end
+        member do
+          get :full_info
+          get :checkup_history
+          get :medical_summary
+        end
+      end
+      
+      # 건강검진 관리 라우트
+      resources :health_checkups, except: [:new, :edit] do
+        resources :checkup_results, except: [:new, :edit]
+        member do
+          patch :start_checkup, :complete_checkup
+        end
+      end
+      
+      resources :medical_histories, except: [:new, :edit]
+      resources :family_histories, except: [:new, :edit]
+      
+      resources :appointments, except: [:new, :edit] do
+        collection do
+          get :dashboard
+          post :create_online
+        end
+        member do
+          patch :confirm
+          patch :cancel  
+          patch :arrive
+          patch :complete
+        end
+      end
+      
       resources :department_posts, except: [:new, :edit]
-      resources :announcements, except: [:new, :edit]
+      resources :announcements, except: [:new, :edit] do
+        member do
+          patch :toggle_pin
+          get :read_status
+        end
+      end
       root 'home#index'
       post 'auth/login', to: 'auth#login'
       post 'auth/refresh', to: 'auth#refresh'

@@ -76,11 +76,14 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
-  # config.hosts = [
-  #   "example.com",     # Allow requests from example.com
-  #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
-  # ]
-  #
+  # Railway 도메인 허용 설정
+  allowed_hosts = []
+  allowed_hosts << ENV["RAILWAY_STATIC_URL"] if ENV["RAILWAY_STATIC_URL"].present?
+  allowed_hosts << ENV["RAILWAY_PUBLIC_DOMAIN"] if ENV["RAILWAY_PUBLIC_DOMAIN"].present?
+  allowed_hosts << /.*\.railway\.app$/
+  
+  config.hosts = allowed_hosts if allowed_hosts.any?
+  
   # Skip DNS rebinding protection for the default health check endpoint.
-  # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end

@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "announcement_reads", force: :cascade do |t|
+    t.bigint "announcement_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["announcement_id", "user_id"], name: "index_announcement_reads_on_announcement_id_and_user_id", unique: true
+    t.index ["announcement_id"], name: "index_announcement_reads_on_announcement_id"
+    t.index ["user_id"], name: "index_announcement_reads_on_user_id"
+  end
 
   create_table "announcements", force: :cascade do |t|
     t.string "title"
@@ -24,7 +35,28 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
     t.boolean "is_published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "view_count", default: 0, null: false
+    t.boolean "is_pinned", default: false, null: false
+    t.datetime "pinned_at"
     t.index ["author_id"], name: "index_announcements_on_author_id"
+    t.index ["is_pinned", "pinned_at"], name: "index_announcements_on_is_pinned_and_pinned_at"
+    t.index ["view_count"], name: "index_announcements_on_view_count"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "employee_id"
+    t.datetime "appointment_date"
+    t.string "appointment_type"
+    t.string "department"
+    t.text "chief_complaint"
+    t.string "status"
+    t.text "notes"
+    t.boolean "created_by_patient"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_appointments_on_employee_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
   create_table "approval_workflows", force: :cascade do |t|
@@ -66,6 +98,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
     t.index ["employee_id", "work_date"], name: "index_attendances_on_employee_id_and_work_date", unique: true
     t.index ["employee_id"], name: "index_attendances_on_employee_id"
     t.index ["work_date"], name: "index_attendances_on_work_date"
+  end
+
+  create_table "checkup_results", force: :cascade do |t|
+    t.bigint "health_checkup_id", null: false
+    t.string "test_category"
+    t.string "test_name"
+    t.string "result_value"
+    t.string "reference_range"
+    t.string "result_status"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["health_checkup_id"], name: "index_checkup_results_on_health_checkup_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -130,6 +175,36 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
     t.index ["status"], name: "index_employees_on_status"
   end
 
+  create_table "family_histories", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.string "relationship"
+    t.string "disease_name"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_family_histories_on_patient_id"
+  end
+
+  create_table "health_checkups", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "appointment_id"
+    t.datetime "checkup_date"
+    t.string "checkup_type"
+    t.string "package_name"
+    t.string "status"
+    t.decimal "total_cost", precision: 10, scale: 2
+    t.boolean "insurance_covered", default: false
+    t.bigint "assigned_doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_health_checkups_on_appointment_id"
+    t.index ["assigned_doctor_id"], name: "index_health_checkups_on_assigned_doctor_id"
+    t.index ["checkup_date"], name: "index_health_checkups_on_checkup_date"
+    t.index ["checkup_type"], name: "index_health_checkups_on_checkup_type"
+    t.index ["patient_id"], name: "index_health_checkups_on_patient_id"
+    t.index ["status"], name: "index_health_checkups_on_status"
+  end
+
   create_table "leave_requests", force: :cascade do |t|
     t.bigint "employee_id", null: false
     t.string "leave_type"
@@ -147,6 +222,45 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
     t.index ["employee_id"], name: "index_leave_requests_on_employee_id"
     t.index ["start_date"], name: "index_leave_requests_on_start_date"
     t.index ["status"], name: "index_leave_requests_on_status"
+  end
+
+  create_table "medical_histories", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.string "disease_name"
+    t.date "diagnosis_date"
+    t.string "treatment_status"
+    t.text "medication"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_medical_histories_on_patient_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.date "birth_date"
+    t.string "gender"
+    t.string "phone"
+    t.string "email"
+    t.text "address"
+    t.string "insurance_type"
+    t.string "insurance_number"
+    t.string "emergency_contact_name"
+    t.string "emergency_contact_phone"
+    t.text "notes"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "patient_number"
+    t.string "occupation"
+    t.string "blood_type"
+    t.decimal "height"
+    t.decimal "weight"
+    t.string "smoking_status"
+    t.string "drinking_status"
+    t.string "exercise_status"
+    t.date "last_checkup_date"
+    t.integer "checkup_cycle"
   end
 
   create_table "payrolls", force: :cascade do |t|
@@ -180,17 +294,27 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_000001) do
     t.index ["role"], name: "index_users_on_role"
   end
 
+  add_foreign_key "announcement_reads", "announcements"
+  add_foreign_key "announcement_reads", "users"
   add_foreign_key "announcements", "users", column: "author_id"
+  add_foreign_key "appointments", "employees"
+  add_foreign_key "appointments", "patients"
   add_foreign_key "approval_workflows", "documents"
   add_foreign_key "approvals", "documents"
   add_foreign_key "approvals", "users", column: "approver_id"
   add_foreign_key "attendances", "employees"
+  add_foreign_key "checkup_results", "health_checkups"
   add_foreign_key "comments", "comments", column: "parent_id"
   add_foreign_key "comments", "department_posts"
   add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "department_posts", "users", column: "author_id"
   add_foreign_key "documents", "users", column: "author_id"
+  add_foreign_key "family_histories", "patients"
+  add_foreign_key "health_checkups", "appointments"
+  add_foreign_key "health_checkups", "employees", column: "assigned_doctor_id"
+  add_foreign_key "health_checkups", "patients"
   add_foreign_key "leave_requests", "employees"
   add_foreign_key "leave_requests", "users", column: "approver_id"
+  add_foreign_key "medical_histories", "patients"
   add_foreign_key "payrolls", "employees"
 end

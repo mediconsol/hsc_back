@@ -22,6 +22,8 @@ class Employee < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: URI::MailTo::EMAIL_REGEXP, message: "올바른 이메일 형식이 아닙니다" }
   
+  validate :debug_email_uniqueness
+  
   validates :phone, format: { with: /\A[0-9\-\s()]+\z/, message: "올바른 전화번호 형식이 아닙니다" }, 
             allow_blank: true
   
@@ -155,6 +157,19 @@ class Employee < ApplicationRecord
   after_destroy :clear_cache
   
   private
+  
+  def debug_email_uniqueness
+    return unless email.present?
+    
+    Rails.logger.info "=== Email Uniqueness Debug ==="
+    Rails.logger.info "Current email: #{email}"
+    Rails.logger.info "Existing employees with this email: #{Employee.where(email: email).where.not(id: id).count}"
+    Rails.logger.info "All emails in DB: #{Employee.pluck(:email)}"
+    
+    existing = Employee.where('LOWER(email) = LOWER(?)', email).where.not(id: id)
+    Rails.logger.info "Case-insensitive match count: #{existing.count}"
+    Rails.logger.info "Existing emails (case-insensitive): #{existing.pluck(:email)}"
+  end
   
   def hire_date_not_future
     return unless hire_date.present?

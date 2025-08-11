@@ -66,20 +66,15 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    database: backend_production
-    username: backend
-    password: <%= ENV["BACKEND_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: backend_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: backend_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: backend_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  # Railway는 DATABASE_URL 환경 변수로 PostgreSQL 연결 정보 제공
+  url: <%= ENV["DATABASE_URL"] %>
+  # 대안적으로 개별 환경 변수 사용
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  host: <%= ENV["PGHOST"] %>
+  port: <%= ENV["PGPORT"] %>
+  # Railway PostgreSQL 최적화 설정
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
+  timeout: 5000

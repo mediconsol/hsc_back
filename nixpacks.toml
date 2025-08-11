@@ -1,0 +1,13 @@
+# Railway Backend Service Nixpacks Configuration
+
+[providers]
+ruby = "3.4.5"
+
+[variables]
+PORT = "7001"
+
+[build]
+cmd = "bundle install && bundle exec rails db:migrate"
+
+[start]
+cmd = "bundle exec rails server -b 0.0.0.0 -p $PORT"

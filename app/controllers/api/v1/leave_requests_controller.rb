@@ -141,8 +141,7 @@ class Api::V1::LeaveRequestsController < ApplicationController
     
     @leave_request.status = 'rejected'
     @leave_request.approver = current_user
-    @leave_request.rejected_at = Time.current
-    @leave_request.rejection_reason = params[:rejection_reason]
+    # Note: rejected_at과 rejection_reason 필드는 현재 테이블에 없음
     
     if @leave_request.save
       render json: {
@@ -294,7 +293,7 @@ class Api::V1::LeaveRequestsController < ApplicationController
   def leave_request_params
     params.require(:leave_request).permit(
       :leave_type, :start_date, :end_date, :days_requested, 
-      :reason, :emergency_contact, :replacement_employee
+      :reason
     )
   end
 
@@ -315,10 +314,7 @@ class Api::V1::LeaveRequestsController < ApplicationController
       status_color: leave_request.status_color,
       approver_name: leave_request.approver&.name,
       approved_at: leave_request.approved_at,
-      rejected_at: leave_request.rejected_at,
-      rejection_reason: leave_request.rejection_reason,
-      emergency_contact: leave_request.emergency_contact,
-      replacement_employee: leave_request.replacement_employee,
+      # rejected_at, rejection_reason, emergency_contact, replacement_employee 필드는 현재 테이블에 없음
       can_cancel: leave_request.can_cancel?,
       created_at: leave_request.created_at,
       updated_at: leave_request.updated_at

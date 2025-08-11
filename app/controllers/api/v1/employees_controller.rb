@@ -74,8 +74,15 @@ class Api::V1::EmployeesController < ApplicationController
   end
 
   def create
+    Rails.logger.info "=== Employee Create Debug ==="
+    Rails.logger.info "Parameters: #{params[:employee]}"
+    Rails.logger.info "Permitted params: #{employee_params}"
+    
     @employee = Employee.new(employee_params)
     @employee.status = 'active' # 기본값 설정
+    
+    Rails.logger.info "Employee before save: #{@employee.attributes}"
+    Rails.logger.info "Employee errors before save: #{@employee.errors.full_messages}"
     
     if @employee.save
       employee_data = {

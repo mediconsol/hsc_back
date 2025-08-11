@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient: one
+  appointment: one
+  checkup_date: 2025-08-11 11:59:30
+  checkup_type: MyString
+  package_name: MyString
+  status: MyString
+  total_cost: 9.99
+  insurance_covered: false
+  assigned_doctor: one
+
+two:
+  patient: two
+  appointment: two
+  checkup_date: 2025-08-11 11:59:30
+  checkup_type: MyString
+  package_name: MyString
+  status: MyString
+  total_cost: 9.99
+  insurance_covered: false
+  assigned_doctor: two
