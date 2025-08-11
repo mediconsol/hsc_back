@@ -35,7 +35,14 @@ RUN apt-get update -qq && \
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle install && \
+
+# Configure bundler for platform compatibility and install gems
+RUN bundle config set --local deployment 'false' && \
+    bundle config set --local path "${BUNDLE_PATH}" && \
+    bundle config set --local without 'development' && \
+    bundle lock --add-platform ruby && \
+    bundle lock --add-platform x86_64-linux && \
+    bundle install --jobs=$(nproc) --retry=3 && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
