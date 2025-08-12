@@ -10,14 +10,23 @@ fi
 if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
   echo "🔄 Running database setup..."
   echo "DATABASE_URL: ${DATABASE_URL}"
+  echo "RAILS_ENV: ${RAILS_ENV}"
+  echo "FORCE_DATABASE_SETUP: ${FORCE_DATABASE_SETUP}"
+  
+  # 연결 테스트
+  echo "Testing database connection..."
+  ./bin/rails runner "puts 'Database connection test: ' + ActiveRecord::Base.connection.execute('SELECT 1').first['?column?'].to_s" || echo "Database connection failed"
   
   # 강제 마이그레이션 실행
   if [ "$FORCE_DATABASE_SETUP" == "true" ] || [ ! -f "/tmp/db_migrated" ]; then
     echo "Running database migrations..."
     ./bin/rails db:create || echo "Database already exists"
-    ./bin/rails db:migrate
+    echo "Running db:migrate..."
+    ./bin/rails db:migrate || echo "Migration failed"
+    echo "Running db:seed..."
     ./bin/rails db:seed || echo "Seed data failed (may be normal)"
     touch /tmp/db_migrated
+    echo "Migration completed"
   fi
   
   echo "✅ Database setup complete"
