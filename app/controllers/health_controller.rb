@@ -140,6 +140,33 @@ class HealthController < ActionController::API
     end
   end
 
+  # 사용자 목록 확인 (임시 디버그용)
+  def users
+    begin
+      users_list = User.all.map do |user|
+        {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+          created_at: user.created_at.iso8601
+        }
+      end
+      
+      render json: {
+        status: 'success',
+        count: users_list.count,
+        users: users_list
+      }
+    rescue => e
+      render json: {
+        status: 'error',
+        error: e.message,
+        count: 0
+      }, status: :service_unavailable
+    end
+  end
+
   # 강제 마이그레이션 실행 (임시 디버그용)
   def migrate
     begin

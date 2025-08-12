@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "health/detailed" => "health#detailed"
   get "health/version" => "health#version"
   get "health/tables" => "health#tables"
+  get "health/users" => "health#users"
   post "health/migrate" => "health#migrate"
 
   # API Documentation (only in dev/test to avoid missing constant errors in production)
