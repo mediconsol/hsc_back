@@ -1,5 +1,13 @@
 # Health check controller - 인증 없이 접근 가능
 class HealthController < ActionController::API
+  # 에러 발생 시 JSON 응답
+  rescue_from Exception do |e|
+    render json: { 
+      error: e.class.name, 
+      message: e.message,
+      backtrace: e.backtrace.first(5)
+    }, status: 500
+  end
 
   # Railway 기본 Health Check
   def show
