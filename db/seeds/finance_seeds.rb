@@ -40,41 +40,29 @@ end
 puts "📊 예산 데이터 생성 중..."
 
 departments = [
-  'medical', 'nursing', 'administration', 'it', 'facility',
-  'finance', 'hr', 'pharmacy', 'laboratory', 'radiology'
+  'medical', 'nursing', 'administration', 'it', 'facility'
 ]
 
 categories = [
-  'personnel', 'medical_equipment', 'it_equipment', 'facility_management',
-  'supplies', 'education', 'research', 'maintenance', 'utilities', 'marketing', 'other'
+  'personnel', 'medical_equipment', 'supplies', 'maintenance', 'utilities'
 ]
 
 budgets = []
 
-[2024, 2025].each do |year|
+[2025].each do |year|  # 메모리 절약을 위해 2025년만 생성
   departments.each do |dept|
-    # 각 부서마다 주요 카테고리 3-5개 예산 생성
+    # 각 부서마다 주요 카테고리 2-3개 예산 생성 (메모리 절약)
     dept_categories = case dept
     when 'medical'
-      ['personnel', 'medical_equipment', 'supplies', 'education']
-    when 'nursing'
-      ['personnel', 'medical_equipment', 'supplies', 'education']
+      ['personnel', 'medical_equipment', 'supplies']
+    when 'nursing' 
+      ['personnel', 'supplies']
     when 'administration'
-      ['personnel', 'facility_management', 'utilities', 'other']
+      ['personnel', 'utilities']
     when 'it'
-      ['personnel', 'it_equipment', 'maintenance', 'education']
+      ['personnel', 'maintenance']
     when 'facility'
-      ['personnel', 'facility_management', 'maintenance', 'utilities']
-    when 'finance'
-      ['personnel', 'it_equipment', 'education', 'other']
-    when 'hr'
-      ['personnel', 'education', 'supplies', 'other']
-    when 'pharmacy'
-      ['personnel', 'medical_equipment', 'supplies', 'research']
-    when 'laboratory'
-      ['personnel', 'medical_equipment', 'supplies', 'research']
-    when 'radiology'
-      ['personnel', 'medical_equipment', 'maintenance', 'supplies']
+      ['personnel', 'maintenance', 'utilities']
     end
 
     dept_categories.each do |category|
@@ -249,8 +237,8 @@ puts "📄 청구서 데이터 생성 중..."
 invoices = []
 invoice_counter = 1
 
-# 최근 3개월간의 청구서 생성
-(0..90).each do |days_ago|
+# 최근 1개월간의 청구서 생성 (메모리 절약)
+(0..30).each do |days_ago|
   issue_date = Date.current - days_ago.days
   
   # 하루에 0-2개의 청구서 생성
