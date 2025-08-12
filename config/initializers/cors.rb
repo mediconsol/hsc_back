@@ -10,9 +10,15 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     # 환경변수에서 허용된 origins 가져오기
     frontend_urls = ENV.fetch("FRONTEND_URL", "http://localhost:7002").split(",").map(&:strip)
     
-    # Production에서는 모든 Railway 도메인 허용
+    # Production에서는 Railway 도메인 추가
     if Rails.env.production?
-      origins '*'
+      production_origins = [
+        'https://hsc1-production-acea.up.railway.app',
+        'https://hsc1-production.up.railway.app',
+        'http://localhost:7002',
+        'http://localhost:3000'
+      ]
+      origins production_origins + frontend_urls
     else
       origins frontend_urls
     end
