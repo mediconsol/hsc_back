@@ -1,6 +1,5 @@
-class HealthController < ApplicationController
-  # 인증 체크 제외
-  skip_before_action :authenticate_user!, only: [:show, :detailed]
+# Health check controller - 인증 없이 접근 가능
+class HealthController < ActionController::API
 
   # Railway 기본 Health Check
   def show
