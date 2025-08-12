@@ -122,17 +122,18 @@ budgets = []
         'active'
       end
 
-      budget = Budget.create!(
+      budget = Budget.find_or_create_by!(
         department: dept,
         category: category,
-        fiscal_year: year,
-        period_type: 'annual',
-        allocated_amount: base_amount,
-        used_amount: used_amount,
-        status: status,
-        manager: [admin_user, manager_user, finance_user].sample,
-        description: "#{year}년 #{Budget.new(department: dept).department_text} #{Budget.new(category: category).category_text} 예산"
-      )
+        fiscal_year: year
+      ) do |b|
+        b.period_type = 'annual'
+        b.allocated_amount = base_amount
+        b.used_amount = used_amount
+        b.status = status
+        b.manager = [admin_user, manager_user, finance_user].sample
+        b.description = "#{year}년 #{Budget.new(department: dept).department_text} #{Budget.new(category: category).category_text} 예산"
+      end
       
       budgets << budget
     end
