@@ -15,10 +15,18 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       production_origins = [
         'https://hsc1-production-acea.up.railway.app',
         'https://hsc1-production.up.railway.app',
+        'https://web-production-acea.up.railway.app',
+        'https://web-production.up.railway.app',
         'http://localhost:7002',
         'http://localhost:3000'
       ]
-      origins production_origins + frontend_urls
+      
+      # 환경변수에서 Railway 도메인들 자동 추가
+      railway_domains = []
+      railway_domains << ENV["RAILWAY_PUBLIC_DOMAIN"] if ENV["RAILWAY_PUBLIC_DOMAIN"].present?
+      railway_domains << ENV["RAILWAY_STATIC_URL"] if ENV["RAILWAY_STATIC_URL"].present?
+      
+      origins (production_origins + frontend_urls + railway_domains).uniq
     else
       origins frontend_urls
     end
