@@ -139,4 +139,42 @@ class HealthController < ActionController::API
       }, status: :service_unavailable
     end
   end
+
+  # 강제 마이그레이션 실행 (임시 디버그용)
+  def migrate
+    begin
+      Rails.logger.info "Starting manual database migration..."
+      
+      # 마이그레이션 실행
+      ActiveRecord::Migration.verbose = true
+      ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths)
+      
+      # 시드 데이터 실행
+      begin
+        Rails.application.load_seed
+        seed_status = "success"
+      rescue => seed_error
+        seed_status = "failed: #{seed_error.message}"
+      end
+      
+      # 테이블 목록 확인
+      tables_after = ActiveRecord::Base.connection.tables.sort
+      
+      render json: {
+        status: "migration_completed",
+        tables_created: tables_after.count,
+        tables: tables_after,
+        seed_status: seed_status,
+        timestamp: Time.current.utc.iso8601
+      }
+      
+    rescue => e
+      render json: {
+        status: "migration_failed",
+        error: e.class.name,
+        message: e.message,
+        backtrace: e.backtrace.first(5)
+      }, status: 500
+    end
+  end
 end
