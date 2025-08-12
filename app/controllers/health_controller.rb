@@ -102,4 +102,33 @@ class HealthController < ActionController::API
 
     render json: version_info
   end
+
+  # 데이터베이스 테이블 목록 확인 (임시 디버그용)
+  def tables
+    begin
+      tables_list = ActiveRecord::Base.connection.tables.sort
+      table_info = {
+        status: 'success',
+        tables_count: tables_list.count,
+        tables: tables_list
+      }
+      
+      # 주요 테이블들 확인
+      expected_tables = %w[users employees patients announcements documents]
+      missing_tables = expected_tables - tables_list
+      
+      table_info[:expected_tables_status] = {
+        found: expected_tables & tables_list,
+        missing: missing_tables
+      }
+      
+      render json: table_info
+    rescue => e
+      render json: { 
+        status: 'error', 
+        error: e.message,
+        tables_count: 0
+      }, status: :service_unavailable
+    end
+  end
 end
