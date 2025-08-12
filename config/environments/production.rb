@@ -130,10 +130,16 @@ Rails.application.configure do
   end
 
   # 데이터베이스 연결 최적화
-  config.active_record.connection_db_config.configuration_hash.merge!(
-    pool: ENV.fetch("RAILS_MAX_THREADS", 10).to_i,
-    timeout: 5000,
-    checkout_timeout: 5,
-    reaping_frequency: 10
-  ) if defined?(ActiveRecord)
+  if defined?(ActiveRecord)
+    config.after_initialize do
+      if ActiveRecord::Base.connection_db_config
+        ActiveRecord::Base.connection_db_config.configuration_hash.merge!(
+          pool: ENV.fetch("RAILS_MAX_THREADS", 10).to_i,
+          timeout: 5000,
+          checkout_timeout: 5,
+          reaping_frequency: 10
+        )
+      end
+    end
+  end
 end
