@@ -16,9 +16,6 @@ if Rails.env.production?
 
     # 성능 로깅
     config.active_record.logger = nil if ENV['DISABLE_DB_LOGS'] == 'true'
-    
-    # 불필요한 로그 제거
-    config.assets.quiet = true
   end
 
   # 커스텀 로거 설정
