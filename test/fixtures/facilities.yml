@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  facility_type: MyString
+  building: MyString
+  floor: 1
+  room_number: MyString
+  capacity: 1
+  status: MyString
+  manager: one
+  description: MyText
+
+two:
+  name: MyString
+  facility_type: MyString
+  building: MyString
+  floor: 1
+  room_number: MyString
+  capacity: 1
+  status: MyString
+  manager: two
+  description: MyText

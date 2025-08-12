@@ -174,6 +174,68 @@ class Api::V1::DocumentsController < ApplicationController
       message: '결재 요청이 완료되었습니다.'
     }
   end
+  
+  # 결재 취소
+  def cancel_approval
+    unless @document.author == @current_user || @current_user.admin?
+      return render json: {
+        status: 'error',
+        message: '권한이 없습니다.'
+      }, status: :forbidden
+    end
+    
+    unless @document.status == 'pending'
+      return render json: {
+        status: 'error',
+        message: '결재 대기 상태인 문서만 취소할 수 있습니다.'
+      }, status: :unprocessable_entity
+    end
+    
+    ActiveRecord::Base.transaction do
+      @document.approvals.where(status: 'pending').update_all(status: 'skipped')
+      @document.update!(status: 'cancelled')
+    end
+    
+    render json: {
+      status: 'success',
+      message: '결재가 취소되었습니다.'
+    }
+  end
+  
+  # 결재 회수
+  def recall_approval
+    unless @document.author == @current_user || @current_user.admin?
+      return render json: {
+        status: 'error',
+        message: '권한이 없습니다.'
+      }, status: :forbidden
+    end
+    
+    unless @document.status == 'pending'
+      return render json: {
+        status: 'error',
+        message: '결재 대기 상태인 문서만 회수할 수 있습니다.'
+      }, status: :unprocessable_entity
+    end
+    
+    # 아직 결재하지 않은 승인건만 있는지 확인
+    if @document.approvals.where.not(status: 'pending').exists?
+      return render json: {
+        status: 'error',
+        message: '이미 결재가 진행된 문서는 회수할 수 없습니다.'
+      }, status: :unprocessable_entity
+    end
+    
+    ActiveRecord::Base.transaction do
+      @document.approvals.destroy_all
+      @document.update!(status: 'draft')
+    end
+    
+    render json: {
+      status: 'success',
+      message: '결재가 회수되었습니다. 문서를 다시 수정할 수 있습니다.'
+    }
+  end
 
   private
 

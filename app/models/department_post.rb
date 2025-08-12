@@ -6,7 +6,7 @@ class DepartmentPost < ApplicationRecord
   validates :content, presence: true
   validates :department, presence: true
   validates :category, presence: true
-  validates :priority, inclusion: { in: [1, 2, 3] } # 1: 중요, 2: 일반, 3: 참고
+  validates :priority, inclusion: { in: %w[important normal reference] }
   
   enum :category, { 
     work_share: 'work_share',      # 업무공유

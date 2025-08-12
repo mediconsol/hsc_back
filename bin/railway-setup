@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+# Railway 배포 시 실행되는 데이터베이스 설정 스크립트
+require_relative "../config/environment"
+
+puts "🚀 Railway 배포 - 데이터베이스 설정 시작..."
+
+begin
+  # 데이터베이스 연결 확인
+  ActiveRecord::Base.connection.execute("SELECT 1")
+  puts "✅ 데이터베이스 연결 성공"
+rescue => e
+  puts "❌ 데이터베이스 연결 실패: #{e.message}"
+  exit 1
+end
+
+begin
+  # 데이터베이스 존재 확인 및 생성
+  unless ActiveRecord::Base.connection.data_source_exists?('users')
+    puts "📊 데이터베이스 테이블이 없습니다. 마이그레이션을 실행합니다..."
+    system("rails db:create") or puts "데이터베이스가 이미 존재합니다."
+  end
+
+  # 마이그레이션 실행
+  puts "🔄 데이터베이스 마이그레이션 실행 중..."
+  system("rails db:migrate") or raise "마이그레이션 실패"
+  puts "✅ 마이그레이션 완료"
+
+  # 기본 데이터 확인 및 시드
+  if User.count == 0
+    puts "👤 기본 사용자 데이터가 없습니다. 시드 데이터를 생성합니다..."
+    system("rails db:seed") or raise "시드 데이터 생성 실패"
+    puts "✅ 시드 데이터 생성 완료"
+  else
+    puts "👤 기본 사용자 데이터가 이미 존재합니다."
+  end
+
+  # 데이터베이스 상태 확인
+  puts "\n📊 데이터베이스 상태:"
+  puts "- 사용자 수: #{User.count}"
+  puts "- 공지사항 수: #{Announcement.count}" if defined?(Announcement)
+  puts "- 대화 히스토리: #{ConversationHistory.count}" if defined?(ConversationHistory)
+
+  puts "\n🎉 Railway 데이터베이스 설정 완료!"
+
+rescue => e
+  puts "❌ 설정 중 오류 발생: #{e.message}"
+  puts e.backtrace.first(5)
+  exit 1
+end

@@ -7,7 +7,7 @@ class Document < ApplicationRecord
   validates :content, presence: true
   validates :document_type, presence: true
   validates :department, presence: true
-  validates :security_level, inclusion: { in: [1, 2, 3, 4] } # 1: 일반, 2: 대외비, 3: 비밀, 4: 극비
+  validates :security_level, inclusion: { in: %w[normal confidential secret top_secret] }
   validates :status, presence: true
   validates :version, presence: true, numericality: { greater_than: 0 }
   

@@ -491,3 +491,9 @@ puts "Total appointments: #{Appointment.count}"
 puts "Pending appointments: #{Appointment.pending.count}"
 puts "Confirmed appointments: #{Appointment.confirmed.count}"
 puts "Online requests: #{Appointment.online_requests.count}"
+
+# Load finance-related seed data
+puts "\n" + "="*50
+puts "Loading Finance System Seeds..."
+puts "="*50
+load Rails.root.join('db', 'seeds', 'finance_seeds.rb')

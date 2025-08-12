@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  persona: MyString
+  message_type: MyString
+  content: MyText
+  timestamp: 2025-08-12 11:29:48
+
+two:
+  user: two
+  persona: MyString
+  message_type: MyString
+  content: MyText
+  timestamp: 2025-08-12 11:29:48

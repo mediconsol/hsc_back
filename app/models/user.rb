@@ -1,5 +1,12 @@
 class User < ApplicationRecord
   has_secure_password
+  
+  # 대화 기록과의 관계
+  has_many :conversation_histories, dependent: :destroy
+  
+  # 시설/자산 관리와의 관계
+  has_many :managed_facilities, class_name: 'Facility', foreign_key: 'manager_id', dependent: :nullify
+  has_many :managed_assets, class_name: 'Asset', foreign_key: 'manager_id', dependent: :nullify
 
   validates :email, presence: true, 
             uniqueness: { case_sensitive: false },

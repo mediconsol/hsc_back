@@ -7,7 +7,7 @@ ruby = "3.4.5"
 PORT = "7001"
 
 [build]
-cmd = "bundle install && bundle exec rails db:migrate"
+cmd = "bundle install && chmod +x bin/railway-setup"
 
 [start]
-cmd = "bundle exec rails server -b 0.0.0.0 -p $PORT"
+cmd = "bin/railway-setup && bundle exec rails server -b 0.0.0.0 -p $PORT"

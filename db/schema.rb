@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_12_042241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -83,6 +83,32 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["document_id"], name: "index_approvals_on_document_id"
   end
 
+  create_table "assets", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "asset_type", null: false
+    t.string "category"
+    t.string "model"
+    t.string "serial_number", null: false
+    t.date "purchase_date"
+    t.decimal "purchase_price", precision: 12, scale: 2
+    t.string "vendor"
+    t.date "warranty_expiry"
+    t.string "status", default: "active"
+    t.bigint "facility_id"
+    t.bigint "manager_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_type"], name: "index_assets_on_asset_type"
+    t.index ["category"], name: "index_assets_on_category"
+    t.index ["facility_id"], name: "index_assets_on_facility_id"
+    t.index ["manager_id"], name: "index_assets_on_manager_id"
+    t.index ["purchase_date"], name: "index_assets_on_purchase_date"
+    t.index ["serial_number"], name: "index_assets_on_serial_number", unique: true
+    t.index ["status"], name: "index_assets_on_status"
+    t.index ["warranty_expiry"], name: "index_assets_on_warranty_expiry"
+  end
+
   create_table "attendances", force: :cascade do |t|
     t.bigint "employee_id", null: false
     t.datetime "check_in"
@@ -98,6 +124,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["employee_id", "work_date"], name: "index_attendances_on_employee_id_and_work_date", unique: true
     t.index ["employee_id"], name: "index_attendances_on_employee_id"
     t.index ["work_date"], name: "index_attendances_on_work_date"
+  end
+
+  create_table "budgets", force: :cascade do |t|
+    t.string "department", null: false
+    t.string "category", null: false
+    t.integer "fiscal_year", null: false
+    t.string "period_type", default: "annual", null: false
+    t.decimal "allocated_amount", precision: 15, scale: 2, default: "0.0", null: false
+    t.decimal "used_amount", precision: 15, scale: 2, default: "0.0", null: false
+    t.string "status", default: "active", null: false
+    t.bigint "manager_id", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department", "category", "fiscal_year"], name: "index_budgets_on_department_and_category_and_fiscal_year", unique: true
+    t.index ["fiscal_year"], name: "index_budgets_on_fiscal_year"
+    t.index ["manager_id"], name: "index_budgets_on_manager_id"
+    t.index ["status"], name: "index_budgets_on_status"
   end
 
   create_table "checkup_results", force: :cascade do |t|
@@ -123,6 +167,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["department_post_id"], name: "index_comments_on_department_post_id"
     t.index ["parent_id"], name: "index_comments_on_parent_id"
+  end
+
+  create_table "conversation_histories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "persona", default: "default", null: false
+    t.string "message_type", null: false
+    t.text "content", null: false
+    t.datetime "timestamp", null: false
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_conversation_histories_on_session_id"
+    t.index ["user_id", "persona"], name: "index_conversation_histories_on_user_id_and_persona"
+    t.index ["user_id", "timestamp"], name: "index_conversation_histories_on_user_id_and_timestamp"
+    t.index ["user_id"], name: "index_conversation_histories_on_user_id"
   end
 
   create_table "department_posts", force: :cascade do |t|
@@ -175,6 +234,49 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["status"], name: "index_employees_on_status"
   end
 
+  create_table "expenses", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.decimal "amount", precision: 15, scale: 2, null: false
+    t.date "expense_date", null: false
+    t.string "category", null: false
+    t.string "department", null: false
+    t.string "vendor"
+    t.string "payment_method", default: "card", null: false
+    t.string "receipt_number"
+    t.string "status", default: "pending", null: false
+    t.bigint "budget_id"
+    t.bigint "requester_id", null: false
+    t.bigint "approver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["approver_id"], name: "index_expenses_on_approver_id"
+    t.index ["budget_id"], name: "index_expenses_on_budget_id"
+    t.index ["category"], name: "index_expenses_on_category"
+    t.index ["department"], name: "index_expenses_on_department"
+    t.index ["expense_date"], name: "index_expenses_on_expense_date"
+    t.index ["requester_id"], name: "index_expenses_on_requester_id"
+    t.index ["status"], name: "index_expenses_on_status"
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "facility_type", null: false
+    t.string "building"
+    t.integer "floor"
+    t.string "room_number"
+    t.integer "capacity"
+    t.string "status", default: "active"
+    t.bigint "manager_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["building", "floor", "room_number"], name: "index_facilities_on_building_and_floor_and_room_number", unique: true
+    t.index ["facility_type"], name: "index_facilities_on_facility_type"
+    t.index ["manager_id"], name: "index_facilities_on_manager_id"
+    t.index ["status"], name: "index_facilities_on_status"
+  end
+
   create_table "family_histories", force: :cascade do |t|
     t.bigint "patient_id", null: false
     t.string "relationship"
@@ -205,6 +307,28 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["status"], name: "index_health_checkups_on_status"
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.string "invoice_number", null: false
+    t.string "vendor", null: false
+    t.date "issue_date", null: false
+    t.date "due_date", null: false
+    t.decimal "total_amount", precision: 15, scale: 2, null: false
+    t.decimal "tax_amount", precision: 15, scale: 2, default: "0.0", null: false
+    t.decimal "net_amount", precision: 15, scale: 2, null: false
+    t.string "status", default: "received", null: false
+    t.date "payment_date"
+    t.text "notes"
+    t.bigint "processor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["due_date"], name: "index_invoices_on_due_date"
+    t.index ["invoice_number"], name: "index_invoices_on_invoice_number", unique: true
+    t.index ["issue_date"], name: "index_invoices_on_issue_date"
+    t.index ["processor_id"], name: "index_invoices_on_processor_id"
+    t.index ["status"], name: "index_invoices_on_status"
+    t.index ["vendor"], name: "index_invoices_on_vendor"
+  end
+
   create_table "leave_requests", force: :cascade do |t|
     t.bigint "employee_id", null: false
     t.string "leave_type"
@@ -222,6 +346,25 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
     t.index ["employee_id"], name: "index_leave_requests_on_employee_id"
     t.index ["start_date"], name: "index_leave_requests_on_start_date"
     t.index ["status"], name: "index_leave_requests_on_status"
+  end
+
+  create_table "maintenances", force: :cascade do |t|
+    t.bigint "asset_id", null: false
+    t.string "maintenance_type", null: false
+    t.date "scheduled_date", null: false
+    t.date "completed_date"
+    t.text "description"
+    t.decimal "cost", precision: 10, scale: 2
+    t.string "technician"
+    t.string "status", default: "scheduled"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_id"], name: "index_maintenances_on_asset_id"
+    t.index ["completed_date"], name: "index_maintenances_on_completed_date"
+    t.index ["maintenance_type"], name: "index_maintenances_on_maintenance_type"
+    t.index ["scheduled_date"], name: "index_maintenances_on_scheduled_date"
+    t.index ["status"], name: "index_maintenances_on_status"
   end
 
   create_table "medical_histories", force: :cascade do |t|
@@ -302,19 +445,29 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_042859) do
   add_foreign_key "approval_workflows", "documents"
   add_foreign_key "approvals", "documents"
   add_foreign_key "approvals", "users", column: "approver_id"
+  add_foreign_key "assets", "facilities"
+  add_foreign_key "assets", "users", column: "manager_id"
   add_foreign_key "attendances", "employees"
+  add_foreign_key "budgets", "users", column: "manager_id"
   add_foreign_key "checkup_results", "health_checkups"
   add_foreign_key "comments", "comments", column: "parent_id"
   add_foreign_key "comments", "department_posts"
   add_foreign_key "comments", "users", column: "author_id"
+  add_foreign_key "conversation_histories", "users"
   add_foreign_key "department_posts", "users", column: "author_id"
   add_foreign_key "documents", "users", column: "author_id"
+  add_foreign_key "expenses", "budgets"
+  add_foreign_key "expenses", "users", column: "approver_id"
+  add_foreign_key "expenses", "users", column: "requester_id"
+  add_foreign_key "facilities", "users", column: "manager_id"
   add_foreign_key "family_histories", "patients"
   add_foreign_key "health_checkups", "appointments"
   add_foreign_key "health_checkups", "employees", column: "assigned_doctor_id"
   add_foreign_key "health_checkups", "patients"
+  add_foreign_key "invoices", "users", column: "processor_id"
   add_foreign_key "leave_requests", "employees"
   add_foreign_key "leave_requests", "users", column: "approver_id"
+  add_foreign_key "maintenances", "assets"
   add_foreign_key "medical_histories", "patients"
   add_foreign_key "payrolls", "employees"
 end

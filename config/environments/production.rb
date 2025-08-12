@@ -43,10 +43,14 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Replace the default in-process memory cache store with a durable alternative.
-  # config.cache_store = :mem_cache_store
+  # Railway Redis 캐시 설정 (Redis 서비스 추가 시 활성화)
+  if ENV["REDIS_URL"].present?
+    config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
+  else
+    config.cache_store = :memory_store, { size: 64.megabytes }
+  end
 
-  # Replace the default in-process and non-durable queuing backend for Active Job.
+  # Active Job 설정 (비동기 작업용)
   # config.active_job.queue_adapter = :resque
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -54,7 +58,8 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
+  mailer_host = ENV["RAILWAY_PUBLIC_DOMAIN"] || ENV["RAILWAY_STATIC_URL"] || "localhost"
+  config.action_mailer.default_url_options = { host: mailer_host, protocol: 'https' }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
@@ -86,4 +91,49 @@ Rails.application.configure do
   
   # Skip DNS rebinding protection for the default health check endpoint.
   config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Railway 최적화 설정
+  # 보안 헤더 설정
+  config.force_ssl = true
+  config.ssl_options = { 
+    redirect: { 
+      exclude: ->(request) { 
+        request.path == "/up" || request.path.start_with?("/rails/active_storage")
+      } 
+    } 
+  }
+
+  # Performance 최적화
+  config.middleware.use Rack::Deflate
+  
+  # 세션 보안 강화
+  config.session_store :cookie_store, 
+    key: '_hospital_system_session',
+    secure: true,
+    httponly: true,
+    same_site: :lax
+
+  # CORS preflight 최적화
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=2592000',
+    'Expires' => 30.days.from_now.to_formatted_s(:rfc822)
+  }
+
+  # Railway 로그 최적화
+  if ENV["RAILWAY_ENVIRONMENT"].present?
+    config.logger = ActiveSupport::TaggedLogging.new(
+      Logger.new(STDOUT, 
+        level: Logger.const_get(ENV.fetch("RAILS_LOG_LEVEL", "INFO").upcase),
+        formatter: Logger::Formatter.new
+      )
+    )
+  end
+
+  # 데이터베이스 연결 최적화
+  config.active_record.connection_db_config.configuration_hash.merge!(
+    pool: ENV.fetch("RAILS_MAX_THREADS", 10).to_i,
+    timeout: 5000,
+    checkout_timeout: 5,
+    reaping_frequency: 10
+  ) if defined?(ActiveRecord)
 end
