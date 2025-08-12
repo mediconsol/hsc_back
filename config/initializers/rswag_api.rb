@@ -1,5 +1,5 @@
-# Rswag API configuration
-if defined?(Rswag) && defined?(Rswag::Api)
+# Rswag API configuration (limit to non-production to avoid boot issues)
+if (Rails.env.development? || Rails.env.test?) && defined?(Rswag) && defined?(Rswag::Api)
   Rswag::Api.configure do |c|
   # Specify a root folder where Swagger JSON files are located
   c.swagger_root = Rails.root.join('swagger').to_s

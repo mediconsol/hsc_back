@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   get "health/detailed" => "health#detailed"
   get "health/version" => "health#version"
 
-  # API Documentation
-  mount Rswag::Ui::Engine => '/api-docs'
-  mount Rswag::Api::Engine => '/api-docs'
+  # API Documentation (only in dev/test to avoid missing constant errors in production)
+  if Rails.env.development? || Rails.env.test?
+    mount Rswag::Ui::Engine => '/api-docs'
+    mount Rswag::Api::Engine => '/api-docs'
+  end
 
   # API routes
   namespace :api do

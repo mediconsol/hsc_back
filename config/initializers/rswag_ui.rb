@@ -1,5 +1,5 @@
-# Rswag UI configuration
-if defined?(Rswag) && defined?(Rswag::Ui)
+# Rswag UI configuration (limit to non-production to avoid boot issues)
+if (Rails.env.development? || Rails.env.test?) && defined?(Rswag) && defined?(Rswag::Ui)
   Rswag::Ui.configure do |c|
   # List the Swagger endpoints that you want to be documented through the swagger-ui
   # The first parameter is the path (absolute or relative to host) to the corresponding
