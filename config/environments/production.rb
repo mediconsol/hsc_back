@@ -104,7 +104,7 @@ Rails.application.configure do
   }
 
   # Performance 최적화
-  config.middleware.use Rack::Deflate
+  config.middleware.use Rack::Deflater
   
   # 세션 보안 강화
   config.session_store :cookie_store, 
