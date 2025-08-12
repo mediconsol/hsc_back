@@ -504,4 +504,11 @@ puts "Online requests: #{Appointment.online_requests.count}"
 puts "\n" + "="*50
 puts "Loading Finance System Seeds..."
 puts "="*50
-load Rails.root.join('db', 'seeds', 'finance_seeds.rb')
+# 환경별 시드 데이터 로딩
+if Rails.env.production?
+  # 프로덕션: 최소 데이터만
+  load Rails.root.join('db', 'seeds', 'production_seeds.rb')
+else
+  # 개발/테스트: 전체 데이터
+  load Rails.root.join('db', 'seeds', 'finance_seeds.rb')
+end

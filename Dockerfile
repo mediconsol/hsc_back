@@ -83,6 +83,7 @@ EXPOSE 3000
 CMD echo "🔄 Running database setup..." && \
     ./bin/rails db:create || echo "Database already exists" && \
     ./bin/rails db:migrate && \
+    echo "🌱 Running production-optimized seeds..." && \
     ./bin/rails db:seed && \
     echo "✅ Database setup complete" && \
     ./bin/rails server -b 0.0.0.0 -p ${PORT:-3000}
