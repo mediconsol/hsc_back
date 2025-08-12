@@ -1,13 +1,11 @@
 # 예산/재무 시스템 테스트 데이터 생성
 puts "🏦 예산/재무 시스템 테스트 데이터 생성 시작..."
 
-# 기존 데이터 정리 (개발 환경에서만)
-if Rails.env.development?
-  puts "기존 예산/재무 데이터 정리 중..."
-  Expense.destroy_all
-  Invoice.destroy_all
-  Budget.destroy_all
-end
+# 기존 데이터 정리 (중복 방지)
+puts "기존 예산/재무 데이터 정리 중..."
+Expense.destroy_all
+Invoice.destroy_all
+Budget.destroy_all
 
 # 사용자 데이터가 없다면 기본 사용자 생성
 admin_user = User.find_or_create_by(email: 'admin@hospital.com') do |user|
@@ -249,6 +247,7 @@ puts "✅ 지출 #{expenses.count}개 생성 완료"
 puts "📄 청구서 데이터 생성 중..."
 
 invoices = []
+invoice_counter = 1
 
 # 최근 3개월간의 청구서 생성
 (0..90).each do |days_ago|
@@ -265,7 +264,9 @@ invoices = []
     ]
     
     vendor = vendors.sample
-    invoice_number = "INV-#{Date.current.year}-#{rand(1000..9999)}"
+    # 중복 방지를 위해 순차적 카운터 사용
+    invoice_number = "INV-#{Date.current.year}-#{invoice_counter.to_s.rjust(4, '0')}"
+    invoice_counter += 1
     
     # 지급기한은 발행일로부터 15-45일 후
     due_date = issue_date + rand(15..45).days
