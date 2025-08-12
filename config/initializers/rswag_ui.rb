@@ -1,5 +1,6 @@
 # Rswag UI configuration
-Rswag::Ui.configure do |c|
+if defined?(Rswag) && defined?(Rswag::Ui)
+  Rswag::Ui.configure do |c|
   # List the Swagger endpoints that you want to be documented through the swagger-ui
   # The first parameter is the path (absolute or relative to host) to the corresponding
   # endpoint and the second is a title that will be displayed in the document selector
@@ -26,4 +27,5 @@ Rswag::Ui.configure do |c|
     showExtensions: true,
     showCommonExtensions: true
   }
+  end
 end

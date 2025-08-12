@@ -1,5 +1,6 @@
 # Rswag API configuration
-Rswag::Api.configure do |c|
+if defined?(Rswag) && defined?(Rswag::Api)
+  Rswag::Api.configure do |c|
   # Specify a root folder where Swagger JSON files are located
   c.swagger_root = Rails.root.join('swagger').to_s
 
@@ -10,5 +11,6 @@ Rswag::Api.configure do |c|
     swagger['host'] = env['HTTP_HOST']
     swagger['schemes'] = env['rack.url_scheme'] == 'https' ? ['https'] : ['http']
     swagger['basePath'] = '/api/v1'
+  end
   end
 end
