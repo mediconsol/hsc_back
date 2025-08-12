@@ -129,17 +129,6 @@ Rails.application.configure do
     )
   end
 
-  # 데이터베이스 연결 최적화
-  if defined?(ActiveRecord)
-    config.after_initialize do
-      if ActiveRecord::Base.connection_db_config
-        ActiveRecord::Base.connection_db_config.configuration_hash.merge!(
-          pool: ENV.fetch("RAILS_MAX_THREADS", 10).to_i,
-          timeout: 5000,
-          checkout_timeout: 5,
-          reaping_frequency: 10
-        )
-      end
-    end
-  end
+  # 데이터베이스 연결 최적화는 database.yml에서 처리
+  # Railway는 DATABASE_URL로 모든 설정을 제공하므로 추가 설정 불필요
 end
