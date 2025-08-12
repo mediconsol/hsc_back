@@ -9,6 +9,13 @@ admin = User.find_or_create_by!(email: 'admin@hospital.com') do |user|
   user.role = 'admin'
 end
 
+# Create new admin user for mediconsol
+mediconsol_admin = User.find_or_create_by!(email: 'admin@mediconsol.com') do |user|
+  user.name = '시스템 관리자'
+  user.password = 'test1234'
+  user.role = 'admin'
+end
+
 # Create manager user
 manager = User.find_or_create_by!(email: 'manager@hospital.com') do |user|
   user.name = 'Hospital Manager'
@@ -25,6 +32,7 @@ end
 
 puts "Created users:"
 puts "Admin: admin@hospital.com / password123"
+puts "Mediconsol Admin: admin@mediconsol.com / test1234"
 puts "Manager: manager@hospital.com / password123"
 puts "Staff: staff@hospital.com / password123"
 
