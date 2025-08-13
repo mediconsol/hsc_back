@@ -1,24 +1,41 @@
-# README
+# HSC1 Backend (Rails API)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+병원 관리 시스템 백엔드(API) 애플리케이션입니다. 프런트엔드와 별도 레포로 분리하여 Railway에 독립 배포하는 구성을 전제로 합니다.
 
-Things you may want to cover:
+## 요구사항
 
-* Ruby version
+- Ruby 3.x
+- PostgreSQL 13+
+- Bundler
 
-* System dependencies
+## 환경 변수
 
-* Configuration
+- `RAILS_ENV`: production/development/test
+- `DATABASE_URL`: PostgreSQL 접속 URL (예: `postgresql://user:pass@host:5432/dbname`)
+- `RAILS_MASTER_KEY`: `config/master.key` 내용 (필수)
+- `FRONTEND_URL`: 허용할 프런트엔드 도메인(프로덕션 CORS용)
+- 선택: `RAILS_MAX_THREADS`
 
-* Database creation
+## 로컬 개발
 
-* Database initialization
+```bash
+bundle install
+bin/rails db:prepare
+bin/rails s -p 7001
+# http://localhost:7001/up
+```
 
-* How to run the test suite
+## 헬스체크
 
-* Services (job queues, cache servers, search engines, etc.)
+- `/up` → 200 OK
+- `/health/detailed` → DB 등 상태 JSON
 
-* Deployment instructions
+## 테스트
 
-* ...
+```bash
+bundle exec rails test
+```
+
+## 배포
+
+Railway(Dockerfile 기반) 배포 가이드는 `DEPLOYMENT.md`를 참고하세요.

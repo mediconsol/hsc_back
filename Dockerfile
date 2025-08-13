@@ -79,11 +79,5 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start server via Thruster by default, this can be overwritten at runtime
 EXPOSE 3000
 
-# Run migrations and start server
-CMD echo "🔄 Running database setup..." && \
-    ./bin/rails db:create || echo "Database already exists" && \
-    ./bin/rails db:migrate && \
-    echo "🌱 Running production-optimized seeds..." && \
-    ./bin/rails db:seed && \
-    echo "✅ Database setup complete" && \
-    ./bin/rails server -b 0.0.0.0 -p ${PORT:-3000}
+# Start server (DB setup handled by ENTRYPOINT)
+CMD ./bin/rails server -b 0.0.0.0 -p ${PORT:-3000}

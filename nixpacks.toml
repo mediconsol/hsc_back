@@ -1,13 +1,1 @@
-# Railway Backend Service Nixpacks Configuration
-
-[providers]
-ruby = "3.4.5"
-
-[variables]
-PORT = "7001"
-
-[build]
-cmd = "bundle install && chmod +x bin/railway-setup"
-
-[start]
-cmd = "bin/railway-setup && bundle exec rails server -b 0.0.0.0 -p $PORT"
+# Deprecated: Using Dockerfile for Railway builds. This file is intentionally disabled.
