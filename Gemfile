@@ -68,7 +68,7 @@ group :test do
   gem "mocha", require: false
   
   # Factory Bot for test data generation
-  gem "factory_bot_rails", "~> 6.4"
+  gem "factory_bot_rails", "~> 6.5"
   
   # Faker for generating realistic fake data
   gem "faker", "~> 3.4"
